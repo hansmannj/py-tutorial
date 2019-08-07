@@ -33,6 +33,7 @@ class Login:
         self.button.pack(pady=10, padx=20)
         self.message.pack(pady=10, padx=20)
 
+        self.window.resizable(width=False, height=False)
         self.window.mainloop()
 
     def login(self, event):

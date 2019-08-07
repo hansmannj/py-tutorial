@@ -24,6 +24,7 @@ class Light:
         self.switch()
 
         # Hauptfenster anzeigen
+        self.window.resizable(width=False, height=False)
         self.window.mainloop()
 
     def switch(self):

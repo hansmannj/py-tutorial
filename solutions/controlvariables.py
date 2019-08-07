@@ -11,7 +11,7 @@ class Controlvars:
         self.window.title("Kontrollvariablen")
 
         # Dynamische Variable im Hauptfenster registrieren
-        self.dynamischer_text = StringVar(self.window)
+        self.dynamischer_text = StringVar()
 
         # Zwei Labels erstellen, deren Texte sich auf die dynamische Veriable beziehen
         self.label1 = Label(master=self.window, width=20, textvariable=self.dynamischer_text)
