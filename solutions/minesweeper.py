@@ -230,7 +230,7 @@ class Cell:
             # Falls das Feld frei ist und noch nie angeklickt wurde:
             # - Feld grün einfärben und disablen.
             # - Anzahl Punkte aktualisieren
-            event.widget.config(bg="green", state="disabled", text=result)
+            event.widget.config(bg="lime", state="disabled", text=result)
             self.game.counter += 1
 
             # Gewonnen, wenn alle Felder abgeräumt
