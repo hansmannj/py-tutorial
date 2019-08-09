@@ -29,7 +29,7 @@ In der Einleitung stand, dass Python eine interpretierte Sprache ist. Dies bedeu
 >
 > Nun können wir unsere Anweisungen in Textform eingeben.
 > Tippe nacheinander folgende Befehle ein, bestätige jeweils mit Enter.
-> ```
+> ```python
 > 'hello world'
 > 1234
 > 1 + 2 + 3 + 4
