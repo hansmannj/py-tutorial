@@ -1,14 +1,14 @@
 # Python Tutorial
 
-##Inhalt
+## Inhalt
 
-##Einleitung
+## Einleitung
 Python ist eine einfach zu lernende, aber mächtige Programmiersprache mit einer eleganten Syntax. Als **interpretierte Sprache** ist sie sowohl für Skripte als auch für die Erweiterung von anpassbaren Applikationen hervorragend geeignet.  
 
 Dieses Tutorial stellt die Grundkonzepte und Eigenschaften der Sprache Python vor. Ziel ist nicht die umfangreiche und vollständige Behandlung sämtlicher Sprachmerkmale von Python, sondern die Vermittlung der wichtigsten Eigenschaften, um einen Eindruck von dem zu bekommen, was Python ist, und wie es in der professionellen Entwicklungsumgebung eingesetzt werden kann.  
 
 ***
-Dieses Tutorial behandelt Python in der Version 3.7. Einzelne Beispiele, insbesondere jene aus Kapitel Grafische Benutzeroberflächen sind nicht mit älteren Versionen (2.7.x) kompatibel. 
+_Dieses Tutorial behandelt Python in der Version 3.7. Einzelne Beispiele, insbesondere jene aus Kapitel Grafische Benutzeroberflächen sind nicht mit älteren Versionen (2.7.x) kompatibel._
 ***
 
 ## Prozesse 
