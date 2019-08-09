@@ -1,35 +1,37 @@
 # Python Tutorial
 
-## Inhalt
+##Inhalt
 
-## Einleitung
+##Einleitung
 Python ist eine einfach zu lernende, aber mächtige Programmiersprache mit einer eleganten Syntax. Als **interpretierte Sprache** ist sie sowohl für Skripte als auch für die Erweiterung von anpassbaren Applikationen hervorragend geeignet.  
 
 Dieses Tutorial stellt die Grundkonzepte und Eigenschaften der Sprache Python vor. Ziel ist nicht die umfangreiche und vollständige Behandlung sämtlicher Sprachmerkmale von Python, sondern die Vermittlung der wichtigsten Eigenschaften, um einen Eindruck von dem zu bekommen, was Python ist, und wie es in der professionellen Entwicklungsumgebung eingesetzt werden kann.  
 
 ***
-_Dieses Tutorial behandelt Python in der Version 3.7. Einzelne Beispiele, insbesondere jene aus Kapitel Grafische Benutzeroberflächen sind nicht mit älteren Versionen (2.7.x) kompatibel._
+_Dieses Tutorial behandelt Python in der Version 3.7. Einzelne Beispiele, insbesondere jene aus Kapitel Grafische Benutzeroberflächen sind nicht mit älteren Versionen (2.7.x) kompatibel._ 
 ***
 
 ## Prozesse 
 
-Programmieren ist nichts anderes, als einen Arbeitsablauf (Prozess) aufzuschreiben. Ein Prozess ist eine Menge an Schritten, denen du folgen musst, um eine Aufgabe auszuführen.
+Programmieren ist nichts anderes, als einen Arbeitsablauf (**Prozess**) aufzuschreiben. Ein Prozess ist eine Menge an Schritten, denen du folgen musst, um eine Aufgabe auszuführen.
 Ohne einen Ablaufplan können Computer keine Aufgaben ausführen. Als Programmierer musst du dem Computer sagen, welche Schritte er ausführen soll, in welcher Reihenfolge und wie oft er sie ausführen soll, und du musst ihn auf alle Ausnahmen, die auftreten und zu einem Fehler führen können, vorbereiten. Alle diese Informationen sind in einem Programm (Software, Skript, App, Anwendung) beschrieben.
-Prozess
-Ein Programm ist ein festgeschriebener Arbeitsablauf, den du verwendest, um dem Computer zu sagen, was er machen soll, wann er es machen soll und wie er es machen soll.
-Legen wir los und sagen unserem Computer, was er zu tun hat. 
-Die Kommandozeile
-In der Einleitung stand, dass Python eine interpretierte Sprache ist. Dies bedeutet, dass der geschriebene Programmcode nicht zuerst in unleserlichen binären Computercode (001011001010) übersetzt (kompiliert) werden muss, sondern dass der menschenlesbare Code direkt ausgeführt (interpretiert) wird. Python unterscheidet sich dadurch von anderen Programmiersprachen wie z.B. Java oder C#.
 
-> **Übung: Erste Schritte**
+***
+_Ein Programm ist ein festgeschriebener Arbeitsablauf, den du verwendest, um dem Computer zu sagen, was er machen soll, wann er es machen soll und wie er es machen soll.
+Legen wir los und sagen unserem Computer, was er zu tun hat._
+***
+
+## Die Kommandozeile
+In der Einleitung stand, dass Python eine interpretierte Sprache ist. Dies bedeutet, dass der geschriebene Programmcode nicht zuerst in unleserlichen binären Computercode (`001011001010`) übersetzt (kompiliert) werden muss, sondern dass der menschenlesbare Code direkt ausgeführt (interpretiert) wird. Python unterscheidet sich dadurch von anderen Programmiersprachen wie z.B. Java oder C#.
+
+> **Übung: Erste Schritte**  
 > Suche im Windows-Startmenu nach _Python command line_ und starte die Kommandozeile.  
 > ![startmenu](screenshots/startmenu.PNG)
 > ![startmenu](screenshots/commandline.PNG)
 > 
->
 > Nun können wir unsere Anweisungen in Textform eingeben.
 > Tippe nacheinander folgende Befehle ein, bestätige jeweils mit Enter.
-> ```python
+> ```
 > 'hello world'
 > 1234
 > 1 + 2 + 3 + 4
@@ -42,6 +44,7 @@ In der Einleitung stand, dass Python eine interpretierte Sprache ist. Dies bedeu
 > zahl2 = 987.654
 > zahl1 – zahl2
 > zahl1 + text1
+> print(text1)
 > str(zahl2) + text1.upper()
 > text1.replace('o', 'OO')
 > text1.replace('o', 'O'*zahl1)
@@ -55,129 +58,219 @@ In der Einleitung stand, dass Python eine interpretierte Sprache ist. Dies bedeu
 > 3/2.0
 > 3/0
 > ```
-> Mit dem Befehl exit() kannst du die Kommandozeile schliessen.
+> Mit dem Befehl `exit()` kannst du die Kommandozeile schliessen.
 
 ## Grundlagen der Programmierung
-Datentypen und Operatoren
-Jede Eingabe wird von Python einem Datentyp zugeordnet. Es gibt Texte (strings) und Zahlen (integers und floats). Daneben gibt es noch eine ganze Reihe weiterer Datentypen, von denen wir später noch einige kennen lernen werden. Jeder Datentyp hat bestimmte Eigenschaften und lässt nur gewisse Operationen zu.
-•	Mit Zahlen können wir rechnen, sie runden oder eine Fliesskommazahl in eine Ganzzahl umwandeln.
-Mathematische Grundoperatoren 
+### Datentypen und Operatoren
+Jede Eingabe wird von Python einem **Datentyp** zugeordnet. Es gibt Texte (_strings_) und Zahlen (_integers_ und _floats_). Daneben gibt es noch eine ganze Reihe weiterer Datentypen, von denen wir später noch einige kennen lernen werden.  
+Jeder Datentyp hat bestimmte Eigenschaften und lässt nur gewisse **Operationen** zu.
+
+####Mathematische Grundoperatoren
+Mit Zahlen können wir rechnen, sie runden oder eine Fliesskommazahl in eine Ganzzahl umwandeln.
+ 
 ```python
 print(2 * 3 + 4 - (5 / 6))
 print(2 * (3 + 4) - 5 / 6)
 print(5 / 3)  # Dezimaldivision
 print(5 // 3)  # Ganzzahldivision
 print(5 % 3)  # Modulo, liefert den Rest einer Division
-
+print(int(3.414))  # Fliesskommazahl anch Integer casten
 ```
-•	Texte (immer mit Hochkommata gekennzeichnet) können wir zusammenfügen (concatenate), in Grossbuchstaben umwandeln, Buchstaben austauschen oder einen Auszug (substring) davon anzeigen u.v.m.
-Textoperatoren 
+#### Textoperatoren
+Texte (immer mit Hochkommata gekennzeichnet) können wir zusammenfügen (_concatenate_), in Grossbuchstaben umwandeln, Buchstaben austauschen oder einen Auszug (_substring_) davon anzeigen u.v.m.
+ 
 ```python
-print("text1" + "text2"[1:3] + "text3".upper())
+"text1" + "text2"[1:3] + "text3".upper()
 
-text = "1234"
-zahl = 1234
-print(text + str(zahl))
+text = "123456"
+zahl = 123456
+text + str(zahl)
 ```
-Variablen
-Alle Datentypen können wir in eine Variable zwischenspeichern. Dazu wählen wir einen beliebigen Variablennamen (deklarieren, z.B. text1), und weisen einen Wert zu (initialisieren). Wir können diesen Wert zu einem beliebigen Zeitpunkt wieder aufgreifen, indem wir ihn über seinen Variablennamen aufrufen.
-•	Python ist case sensitive. Also immer aufpassen mit Gross- und Kleinschreibung
-•	Bei Operationen mit verschiedenen Datentypen ist Vorsicht geboten. Manchmal ist eine Typenumwandlung (casting) notwendig.
-•	Mit # können wir Kommentare einfügen, die von Python ignoriert werden.
-Ein für den Ablauf eines Programms unentbehrlicher Datentyp ist der Boolean. Dieser Datentyp kann nur zwei verschiedene Werte annehmen, nämlich True und False. Insbesondere bei Verzweigungen haben Boolesche Werte grosse Bedeutung.
-Programmierparadigmen
-Wir haben gelernt, dass ein Programm eine Menge an Schritten ist, die ein Computer auszuführen hat, um eine bestimmte Aufgabe zu erledigen. Abgesehen davon, dass wir mit dem Computer in einer für ihn verständlichen Sprache kommunizieren müssen (in unserem Fall Python), ist es uns weitgehend freigestellt, nach welchem Paradigma (Denkmuster) wir das tun möchten.
-Am eingängigsten für Programmier-Newbies und daher auch erste Wahl in diesem Kurs ist sicherlich die Imperative Programmierung: Die Befehlsabfolge eines Skripts wird gradlinig – mit grösseren oder kleineren Umwegen – von oben nach unten abgearbeitet.
-Obwohl wir in diesem Tutorial nicht näher auf das Paradigma der Objektorientierten Programmierung (OOP) eingehen, müssen an dieser Stelle doch noch drei Begriffe eingeführt werden, die uns immer wieder begegnen:
-Eine Variable eines bestimmten Typs ist immer ein Objekt. Dieses hat spezifische Eigenschaften und Fähigkeiten. Ein Objekt wird immer nach einer exakten Bauanleitung erstellt. Diese Anleitung nennt man Klasse, die Erstellung Instanziierung.
+
+### Variablen
+Alle Datentypen können wir in eine **Variable** zwischenspeichern. Dazu wählen wir einen beliebigen Variablennamen (**deklarieren**, z.B. `text1`), und weisen einen Wert zu (**initialisieren**).  
+Wir können diesen Wert zu einem beliebigen Zeitpunkt wieder aufgreifen, indem wir ihn über seinen Variablennamen aufrufen.
+***
+- _Python ist _case sensitive_. Also immer aufpassen mit Gross- und Kleinschreibung_
+- _Bei Operationen mit verschiedenen Datentypen ist Vorsicht geboten. Manchmal ist eine Typenumwandlung (casting) notwendig._
+- _Mit `#` können wir Kommentare einfügen, die von Python ignoriert werden.
+***
+
+Ein für den Ablauf eines Programms unentbehrlicher Datentyp ist der _Boolean_. Dieser Datentyp kann nur zwei verschiedene Werte annehmen, nämlich `True` und `False`. Insbesondere bei Verzweigungen haben Boolesche Werte grosse Bedeutung.
+
+## Programmierparadigmen
+Wir haben gelernt, dass ein Programm eine Menge an Schritten ist, die ein Computer auszuführen hat, um eine bestimmte Aufgabe zu erledigen. Abgesehen davon, dass wir mit dem Computer in einer für ihn verständlichen Sprache kommunizieren müssen (in unserem Fall Python), ist es uns weitgehend freigestellt, nach welchem Paradigma (Denkmuster) wir das tun möchten.  
+
+Am eingängigsten für Programmier-Newbies und daher auch erste Wahl in diesem Kurs ist sicherlich die **Imperative Programmierung**: Die Befehlsabfolge eines Skripts wird gradlinig – mit grösseren oder kleineren Umwegen – von oben nach unten abgearbeitet.  
+
+Obwohl wir in diesem Tutorial nicht näher auf das Paradigma der **Objektorientierten Programmierung** (OOP) eingehen, müssen an dieser Stelle doch noch drei Begriffe eingeführt werden, die uns immer wieder begegnen:
+Eine Variable eines bestimmten Typs ist immer ein **Objekt**. Dieses hat spezifische **Eigenschaften** und **Fähigkeiten**. Ein Objekt wird immer nach einer exakten Bauanleitung erstellt. Diese Anleitung nennt man **Klasse** (``class``), die Erstellung **Instanziierung**.
 In der realen Welt wäre also ein Schokoladenkuchen (=Objekt) ein nach einem bestimmten Rezept (=Klasse) zubereitetes (=instanziiertes) Gebäck.
-Collections
+
+## Collections
 Ein Hauptzweck von Programmierung ist es, wiederkehrende Aufgaben automatisiert ausführen. Dazu ist es nützlich, wenn wir diese Aufgaben zuerst auflisten und dann der Reihe nach abarbeiten.
-List
-Eine Liste (array) ist immer mit zwei eckigen Klammern gekennzeichnet. Sie kann eine beliebige Anzahl an Einträgen (elements) enthalten, die sich dynamisch verändern lassen.
+
+### List
+Eine Liste (`array` oder `list`) ist immer mit zwei **eckigen Klammern** gekennzeichnet. Sie kann eine beliebige Anzahl an Einträgen (**elements**) enthalten, die sich dynamisch verändern lassen.
+
+```python
 woche = ['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag']
-Auch für Listen gibt es zahlreiche mögliche Operationen. In der Liste woche fehlen der Samstag und der Sonntag. Im Beispiel sehen wir dies sofort, doch in einem grösseren Skript ist es manchmal sinnvoll zu prüfen, ob ein bestimmtes Element in einem Array vorhanden ist:
+```
+
+Auch für Listen gibt es zahlreiche mögliche Operationen. In der Liste ``woche`` fehlen der Samstag und der Sonntag. Im Beispiel sehen wir dies sofort, doch in einem grösseren Skript ist es manchmal sinnvoll zu prüfen, ob ein bestimmtes Element in einem Array vorhanden ist:
+```
 'Sonntag' in woche
+```
+
 Wir fügen das Wochenende noch hinzu:
+
+```
 woche.append('Samstag')
 woche.append('Sonntag')
-Ein Eintrag in einer Liste kann auch direkt angesprochen werden, wenn wir seine Position (index) innerhalb der Liste kennen. Der Mittwoch ist der dritte Wochentag, deshalb steht er an dritter Stelle.
-woche[2]
+```
 
-Index
-Da in Programmiersprachen die Nummerierung nicht bei eins, sondern bei null beginnt, hat der Mittwoch den Index 2.
+Ein Eintrag in einer Liste kann auch direkt angesprochen werden, wenn wir seine Position (**Index**) innerhalb der Liste kennen. Der Mittwoch ist der dritte Wochentag, deshalb steht er an dritter Stelle.
+
+***
+_Da in Programmiersprachen die Nummerierung nicht bei eins, sondern bei **null** beginnt, hat der Mittwoch den Index 2._
+***
+
+```
+woche[2]
+```
 
 Natürlich lassen sich Listen auch sortieren. Wir überschreiben die Variable woche mit einer sortierten Liste der Wochentage.
+
+```
 woche = sorted(woche)
-An Indexposition 2 steht nun nicht mehr der Mittwoch, sondern der Freitag.
+```
+
+An Indexposition 2 steht nun nicht mehr der Mittwoch, sondern der Freitag. 
 Aus einer Liste entfernt werden könne Einträge über ihre Indexposition oder über ihren Wert:
+
+```
 woche.pop(2)  # entfernt den Eintrag mit Index 2, also den Freitag
 woche.remove('Mittwoch')  # entfernt den Mittwoch
+```
+
 Jeder Text (string) ist gleichzeitig eine Liste seiner einzelnen Buchstaben. Dies wird deutlich, wenn wir versuchen ein einzelnes Wort zu sortieren:
+
+```python
 lt = sorted('swisstopo')
-Set
+```
+
+### Set
 Eine Liste kann mehrere identische Elemente haben. Die einfachste Möglichkeit, Duplikate aus einer Liste zu entfernen, ist sie in ein Set umzuwandeln. Ein Set ist im Gegensatz zu einer Liste weniger dynamisch und lässt keine doppelten Einträge zu.
+```
 lt = set(lt)
+```
 
 Nun können wir beispielsweise bestimmen, wie viele verschiedene Buchstaben im Wort swisstopo vorkommen:
+
+```
 len(lt)
+```
+
 Sehr hilfreich sind Sets bei Operationen der Mengenlehre:
+
+```python
 set('Landestopografie') & set('swisstopo')  # gemeinsame Buchstaben
 set('Landestopografie') ^ set('swisstopo')  # nur in einem der beiden Begriffe
 len(set('Landestopografie') | set('swisstopo'))  # Anzahl verschiedener Buchstaben insgesamt
-Tupel
-Ein Tupel ist eine unveränderliche Liste mit einer fixen Anzahl an Elementen. Sinnvoll ist dies z.B., wenn wir die Koordinaten eines Punktes in einer Liste – oder eben in einem Tupel – speichern wollen:
+```
+
+### Tupel
+Ein Tupel ist eine **unveränderliche** Liste mit einer fixen Anzahl an Elementen. Sinnvoll ist dies z.B., wenn wir die Koordinaten eines Punktes in einer Liste – oder eben in einem Tupel – speichern wollen:
+
+```python
 bern2d = (600000, 200000)
 bern3d = (600000, 200000, 500)
-
+```
 Tupeln werden wir auch bei der Berechnung von Zeiten und Daten wieder begegnen.
-Dictionary
-Dictionaries sind tatsächlich so etwas wie Nachschlagewerke: Wird nach einem bestimmten Schlüsselwort (key) gefragt, erhält man den dafür hinterlegten Wert (value) zurück. Dictionaries werden mit geschwungenen Klammern gekennzeichnet. Key und Value werden mit einem Doppelpunkt getrennt.
+
+### Dictionary
+Dictionaries sind tatsächlich so etwas wie Nachschlagewerke: Wird nach einem bestimmten Schlüsselwort (**key**) gefragt, erhält man den dafür hinterlegten Wert (**value**) zurück.  
+Dictionaries werden mit **geschwungenen Klammern** gekennzeichnet. Key und Value werden mit einem Doppelpunkt getrennt.
+
+```python
 anreden = {'de':'hoi', 'fr':'salut', 'it':'ciao'}
+```
 
 Alle Elemente in einem Dictionary können spezifisch abgefragt werden:
+
+```
 anreden['it']  # liefert den für den Key 'it' hinterlegten Wert
 anreden.keys()  # liefert eine Liste mit allen Schlüsselwörtern
 anreden.values()  # Liste mit allen Werten
 anreden.items()  # verschachtelte Liste mit Key/Value-Tupel
+```
+
 Das letzte Beispiel zeigt, dass Listen, Sets und Dictionaries eng verwandt sind und vielseitig miteinander kombiniert und ineinander verschachtelt (nested) werden können.
  
-Entwicklungsumgebung
-Bisher haben wir auf der Kommandozeile gearbeitet, und alle Eingaben wurden sofort verarbeitet und die Resultate ausgegeben. Dies vermittelt zwar das Gefühl, ein wahrer Hacker zu sein, ist aber wenig nachhaltig. Unsere Skripte wollen wir speichern können, um sie z.B. später auszuführen oder einer anderen Person zur Nutzung zu übergeben.
-Es ist möglich, in einem einfachen Texteditor wie Notepad ein Pythonskript zu programmieren. Da dies nicht sehr komfortabel ist, gibt es eine Reihe verschiedener Texteditoren, die für das Programmieren mit Python optimiert sind. In letzter Zeit hat sich PyCharm als IDE’s (integrated development environment) etabliert.
-•	https://www.jetbrains.com/pycharm/download/
-Übung: IDE
-Mache dich mit der Oberfläche von PyCharm vertraut. Probiere anhand der Beispiele von oben ein paar Zeilen Pythoncode zu programmieren. Führe deinen Code aus. Nutze den Befehl print() zur Ausgabe deiner Resultate. Speichere dein Skript regelmässig.
-Ein Pythonskript ist eine Textdatei mit der Dateiendung py. Ein als Datei abgespeichertes Pythonskript lässt sich auf verschiedene Arten ausführen:
-•	Direkt im PyCharm über den entsprechenden Button
-•	Mit Doppelklick auf die Datei im Windows Explorer
-•	Über die Windows Kommandozeile
-Kontrollstrukturen
-Schleifen
-Schleifen (loops) erlauben, Listen effizient abzuarbeiten. Beim sogenannten Iterieren wird eine bestimmte Operation für jedes Element in einer Liste einmal ausgeführt.
+## Entwicklungsumgebung
+Bisher haben wir auf der Kommandozeile gearbeitet, und alle Eingaben wurden sofort verarbeitet und die Resultate ausgegeben. Dies vermittelt zwar das Gefühl, ein wahrer Hacker zu sein, ist aber wenig nachhaltig. Unsere Skripte wollen wir speichern können, um sie z.B. später auszuführen oder einer anderen Person zur Nutzung zu übergeben.  
+
+Es ist möglich, in einem einfachen Texteditor wie Notepad ein Pythonskript zu programmieren. Da dies nicht sehr komfortabel ist, gibt es eine Reihe verschiedener Texteditoren, die für das Programmieren mit Python optimiert sind. In letzter Zeit hat sich **PyCharm** als **IDE**’s (integrated development environment) etabliert.
+
+https://www.jetbrains.com/pycharm/download
+
+> **Übung: IDE**  
+> Mache dich mit der Oberfläche von PyCharm vertraut. Probiere anhand der Beispiele von oben ein paar Zeilen Pythoncode zu programmieren. Führe deinen Code aus. Nutze den Befehl `print()` zur Ausgabe deiner Resultate. Speichere dein Skript regelmässig.
+
+Ein Pythonskript ist eine Textdatei mit der Dateiendung `py`. Ein als Datei abgespeichertes Pythonskript lässt sich auf verschiedene Arten ausführen:
+- Direkt im PyCharm über Rechtsklick > Run oder den entsprechenden Button
+- Mit Doppelklick auf die Datei im Windows Explorer
+- Über die Windows Kommandozeile
+
+## Kontrollstrukturen
+Mit Kontrollstrukturen wird der Programmablauf über Wiederholungen und Verzweigungen gesteuert.
+
+### Schleifen
+Schleifen (**loops**) erlauben, Listen effizient abzuarbeiten. Beim sogenannten Iterieren wird eine bestimmte Operation **für jedes Element in einer Liste einmal** ausgeführt.
+
+```python
 liste = [1, 2, 3, 4, 5]
 for zahl in liste:
 	quadratzahl = zahl ** 2
 	print(quadratzahl)
-Bei jedem Schleifendurchlauf wird die Quadratzahl der aktuellen Zahl berechnet und angezeigt, bis alle Zahlen in der liste einmal an der Reihe waren. Den eingerückten Codeabschnitt nennt man Anweisungsblock. 
-Anweisungsblock
-Ein Anweisungsblock ist immer genau vier Leerschläge eingerückt. Python ist hier sehr strikt und verzeiht es nicht, wenn diese Regel nicht eingehalten wird.
-Das Beispiel oben nennt man for-Schleife, da der Schleifendurchlauf für eine bestimmte Anzahl Elemente ausgeführt wird. Die Anzahl Elemente ergibt sich aus der Listenlänge.
-Übung: for-Schleife
-Berechne mit einer for-Schleife die Summe der Elemente in der Liste [1, 2, 3, 4, 5, 6].
- Innerhalb eines Anweisungsblocks können wir auf Variablen von ausserhalb des Blocks zugreifen und diese verändern. Dazu wird eine Variable vor dem Block initialisiert (z.B. summe = 0) und dieser Wert bei jedem Schleifendurchlauf um die aktuelle Zahl erhöht.
+```
+
+Bei jedem Schleifendurchlauf wird die Quadratzahl der aktuellen Zahl berechnet und angezeigt, bis alle Zahlen in der Liste einmal an der Reihe waren.  
+Den eingerückten Codeabschnitt nennt man **Anweisungsblock**. 
+
+***
+_Ein Anweisungsblock ist immer genau **vier Leerschläge** eingerückt. Python ist hier sehr strikt und verzeiht es nicht, wenn diese Regel nicht eingehalten wird._
+***
+
+Das Beispiel oben nennt man `for`-Schleife, da der Schleifendurchlauf **für eine bestimmte Anzahl Elemente** ausgeführt wird.  
+Die Anzahl Elemente ergibt sich aus der Listenlänge.
+
+> **Übung: `for`-Schleife**  
+> Berechne mit einer `for`-Schleife die Summe der Elemente in der Liste `[1, 2, 3, 4, 5, 6]`.  
+> Tipp: Innerhalb eines Anweisungsblocks können wir auf Variablen von ausserhalb des Blocks zugreifen und diese verändern. Dazu wird eine Variable vor dem Block initialisiert (z.B. `summe = 0`) und dieser Wert bei jedem Schleifendurchlauf um die aktuelle Zahl erhöht.
+
 Häufig gibt es auch den Fall, dass wir zu Beginn nicht genau wissen, wie oft eine Anweisung ausgeführt werden soll. Die Anzahl Durchläufe hängt dann von einer Bedingung ab.
+
+```python
 zahl = 1
 while zahl <= 10:
 	print(zahl)
 	zahl += 0.0123456
 print("Schleife fertig")
-Eine while-Schleife wird solange ausgeführt, wie die Bedingung erfüllt ist. Danach geht es im Skript ausserhalb des Anweisungsblocks weiter.
-Endlosschleife
-while-Schleifen sind sehr anfällig für Programmierfehler. Wenn nämlich das Abbruchkriterium fehlt, bleibt das Skript im Block gefangen und befindet sich in einer Endlos-Schleife. Abgebrochen werden kann eine Endlos-Schleife mit Ctrl+C.
-Verzweigungen
-Die Prüfung, ob eine Bedingung erfüllt ist oder nicht, ist einer der wichtigsten Mechanismen bei der Programmierung. Damit werden die Weichen gestellt, was das Programm unter gewissen Umständen tun soll.
-Verzweigungen werden mit if, elif und else eingeleitet. Es ist erlaubt, dass if alleine steht und keine weiteren Prüfungen stattfinden sollen. Beliebig viele alternative Bedingungen können mit elif geprüft werden. Falls bis dahin noch keine der Bedingungen erfüllt wurde, wird der Anweisungsblock nach else ausgeführt.
+```
+
+Eine `while`-Schleife wird ausgeführt, **solange eine Bedingung erfüllt ist**. Danach geht es im Skript ausserhalb des Anweisungsblocks weiter.
+
+***
+_`while`-Schleifen sind sehr anfällig für Programmierfehler. Wenn nämlich das Abbruchkriterium fehlt, bleibt das Skript im Block gefangen und befindet sich in einer Endlos-Schleife.  
+Abgebrochen werden kann eine Endlos-Schleife mit `Ctrl+C`._
+***
+
+### Verzweigungen
+Die Prüfung, ob eine Bedingung erfüllt ist oder nicht, ist einer der wichtigsten Mechanismen bei der Programmierung. Damit werden die Weichen gestellt, was das Programm unter gewissen Umständen tun soll.  
+
+Verzweigungen werden mit `if`, `elif` und `else` gesteuert. Es ist erlaubt, dass `if` alleine steht und keine weiteren Prüfungen stattfinden sollen. Beliebig viele alternative Bedingungen können mit `elif` geprüft werden. Falls bis dahin noch keine der Bedingungen erfüllt wurde, wird der Anweisungsblock nach `else` ausgeführt. 
+```python
 for zahl in range(10):
 	if zahl == 3:
 		print(zahl, "juhee, drei")
@@ -187,29 +280,35 @@ for zahl in range(10):
 		print(zahl, "yes, neun")
 	else:
 		print(zahl, "eine andere Zahl")
-•	range(10) ist eine Kurzschreibweise für eine Liste [0,1,2,3,4,5,6,7,8,9]. Auch hier gilt wieder: Die Nummerierung beginnt bei 0, dafür ist die 10 nicht inklusive.
-•	Im Gegensatz zur Initialisierung einer Variablen = besteht der Vergleichsoperator aus zwei Gleichheitszeichen ==.
-Vergleichsoperatoren
-Neben dem ist-gleich-Operator gibt es zahlreiche weitere Vergleichsoperatoren:
-Operator	Bedeutung	Beispiel
-==	ist gleich	"a" == 'a'
-!=	ist ungleich	"a" != "b"
-<	ist kleiner als	1 < 2
-<=	ist kleiner gleich	2 <= 2
->	ist grösser als	1 > 2
->=	ist grösser gleich	4 >= 3
-in	ist in einer Collection enthalten	"e" in "Hello" 
-7 in range(10) 
-"a" in ["b","c","d"]
-Das Resultat eines Vergleichs ist immer entweder wahr oder falsch. In Computerslang heisst das, dass ein Ausdruck nach True oder False evaluiert. Diese Booleans sind im Code aber häufig nicht direkt als solche ersichtlich, sondern verstecken sich hinter der eigentlichen Expression.
-Artversandt sind spezielle Funktionen, die als Resultat einen Boolean zurückgeben:
-Funktion	Bedeutung	Beispiel
-.startswith()	String beginnt mit	"Hello".startswith("h")
-.endswith()	String endet mit	"World".endwith("d")
-Die verschiedenen Vergleichsoperatoren lassen sich beliebig kombinieren oder negieren. Dazu werden die Befehle and, or und not verwendet. Einzelne Bedingungen können mit Klammern gruppiert werden.
-  TODO: andere Übung überlegen
-•	Wird in Python eine Ganzzahl (integer) durch eine andere Ganzzahl dividiert, ist das Resultat auch eine Ganzzahl (immer abgerundet). Bsp.: 3/2=1. Dies hängt mit dem Datentyp zusammen, den Python nicht automatisch von einem int in einen float umwandelt.
-•	Zahlen können mit str(1234) in Strings umgewandelt (gecastet) werden.
+```
+
+`range(10)` ist eine Kurzschreibweise für eine Liste `[0,1,2,3,4,5,6,7,8,9]`. Auch hier gilt wieder: Die Nummerierung beginnt bei `0`, dafür ist die `10` nicht inklusive.  
+Im Gegensatz zur Initialisierung einer Variablen `=` besteht der Vergleichsoperator aus zwei Gleichheitszeichen `==`.
+
+### Vergleichsoperatoren
+Neben dem ist-gleich-Operator gibt es zahlreiche weitere Vergleichsoperatoren:  
+
+| Operator | Bedeutung | Beispiel |
+| --- | --- | --- |
+| `==` | ist gleich | `"a" == "b"` |
+| `!=` | ist ungleich | `"a" == "b"` |
+| `<` | ist kleiner als | `1 < 2` |
+| `<=` | ist kleiner gleich | `2 <= 2` |
+| `>` | ist grösser als | `1 > 2` |
+| `>=` | ist grösser gleich | `4 >= 3` |
+| `in` | ist in einer Collection enthalten | `"e" in "Hello"`<br>`7 in range(10)`<br>`"a" in ["b","c","d"]`
+
+Das Resultat eines Vergleichs ist immer entweder `True` oder `False`. Diese Booleans sind im Code häufig nicht direkt als solche ersichtlich, sondern verstecken sich hinter der eigentlichen Expression.
+
+Artverwandt sind spezielle Funktionen, die als Resultat einen Boolean zurückgeben:
+
+| Funktion | Bedeutung | Beispiel |
+| --- | --- | --- |
+| `.startswith()` | String beginnt mit | `"Hello".startswith("h")` |
+| `.endswith()` | String endet mit | `"World".endwith("d")` |
+	
+Die verschiedenen Vergleichsoperatoren lassen sich beliebig kombinieren oder negieren. Dazu werden die Befehle `and`, `or` und `not` verwendet. Einzelne Bedingungen können mit Klammern gruppiert werden.
+
 Bei einer Kombination von Schleifen und Bedingungen kann der Schleifendurchlauf mit dem Befehl break aktiv unterbrochen werden.
 zahl = 1
 while zahl <= 10:
