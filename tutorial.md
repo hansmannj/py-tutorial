@@ -245,7 +245,6 @@ Im Beispiel wird bei jedem Schleifendurchlauf die Quadratzahl der aktuellen Zahl
 
 ***
 _Den eingerückten Codeabschnitt nennt man **Anweisungsblock**. Dieser ist immer genau **vier Leerschläge** eingerückt._  
- 
 _Python ist hier sehr strikt und verzeiht es nicht, wenn diese Regel nicht eingehalten wird. Zum Glück unterstützt uns hier die IDE._
 ***
 
@@ -257,7 +256,8 @@ Die Anzahl Elemente ergibt sich aus der Listenlänge.
 >
 > Berechne mit einer `for`-Schleife die Summe der Elemente in der Liste `[1, 2, 3, 4, 5, 6]`.  
 >
-> _Tipp_: Innerhalb eines Anweisungsblocks können wir auf Variablen von ausserhalb des Blocks zugreifen und diese verändern. Dazu wird eine Variable vor dem Block initialisiert (z.B. `summe = 0`) und dieser Wert bei jedem Schleifendurchlauf um die aktuelle Zahl erhöht.
+> _Tipp_:  
+> Innerhalb eines Anweisungsblocks können wir auf Variablen von ausserhalb des Blocks zugreifen und diese verändern. Dazu wird eine Variable vor dem Block initialisiert (z.B. `summe = 0`) und dieser Wert bei jedem Schleifendurchlauf um die aktuelle Zahl erhöht.
 
 Häufig gibt es auch den Fall, dass wir zu Beginn nicht genau wissen, wie oft eine Anweisung ausgeführt werden soll. Die Anzahl Durchläufe hängt dann von einer Bedingung ab.
 
@@ -570,13 +570,11 @@ Im Internet finden sich unendlich viele Daten und Dienste, die wir downloaden od
 In der GIS-Welt müssen z.B. häufig Koordinaten von einem System in ein anderes umgerechnet werden. Den Algorithmus zur Transformation müssen wir nicht selber entwickeln, sondern können dazu einen Dienst im Internet nutzen.  
 
 Die swisstopo stellt z.B. einen Dienst (Service) zur Verfügung, mit dem solche Koordinatentransformationen vorgenommen werden können.
-
 https://www.swisstopo.admin.ch/de/karten-daten-online/calculation-services/m2m.html  
 
 Auf der Webseite heisst es sinngemäss, dass wir über eine bestimmte URL mit der Übergabe der Parameter `easting` und `northig` die umgerechneten Koordinaten erhalten.  
 
 Anhand des aufgeführten Beispiels wissen wir, dass unsere URL so aussehen muss:  
-
 https://geodesy.geo.admin.ch/reframe/wgs84tolv03?easting=7.452&northing=46.928&format=json  
 
 Im Browserfenster sehen wir nun das Resultat  
@@ -926,19 +924,19 @@ from tkinter import *
 class Messages:
 
     def __init__(self):
-        self.window = Tk()
-        self.window.title("Box")
+        window = Tk()
+        window.title("Box")
 
-        self.btn_info = Button(master=self.window, text="Infobox", command=self.info)
-        self.btn_info.pack(pady=10, padx=10, side=LEFT)
+        btn_info = Button(master=window, text="Infobox", command=self.info)
+        btn_info.pack(pady=15, padx=15, side=LEFT)
 
-        self.btn_yesno = Button(master=self.window, text="Yes/No", command=self.yesno)
-        self.btn_yesno.pack(pady=10, padx=10, side=LEFT)
+        btn_yesno = Button(master=window, text="Yes/No", command=self.yesno)
+        btn_yesno.pack(pady=15, padx=50, side=LEFT)
 
-        self.btn_retry = Button(master=self.window, text="Retry", command=self.retry)
-        self.btn_retry.pack(pady=10, padx=10, side=LEFT)
+        btn_retry = Button(master=window, text="Retry", command=self.retry)
+        btn_retry.pack(pady=15, padx=15, side=LEFT)
 
-        self.window.mainloop()
+        window.mainloop()
 
     def info(self, message="Ich bin eine Infobox"):
         tkinter.messagebox.showinfo("Info", message)
