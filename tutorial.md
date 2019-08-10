@@ -65,16 +65,17 @@ In der Einleitung stand, dass Python eine interpretierte Sprache ist. Dies bedeu
 Jede Eingabe wird von Python einem **Datentyp** zugeordnet. Es gibt Texte (_strings_) und Zahlen (_integers_ und _floats_). Daneben gibt es noch eine ganze Reihe weiterer Datentypen, von denen wir später noch einige kennen lernen werden.  
 Jeder Datentyp hat bestimmte Eigenschaften und lässt nur gewisse **Operationen** zu.
 
-####Mathematische Grundoperatoren
+#### Mathematische Grundoperatoren
 Mit Zahlen können wir rechnen, sie runden oder eine Fliesskommazahl in eine Ganzzahl umwandeln.
  
 ```python
-print(2 * 3 + 4 - (5 / 6))
-print(2 * (3 + 4) - 5 / 6)
-print(5 / 3)  # Dezimaldivision
-print(5 // 3)  # Ganzzahldivision
-print(5 % 3)  # Modulo, liefert den Rest einer Division
-print(int(3.414))  # Fliesskommazahl anch Integer casten
+2 * 3 + 4 - (5 / 6)
+2 * (3 + 4) - 5 / 6
+5 / 3  # Dezimaldivision
+5 // 3  # Ganzzahldivision
+5 % 3  # Modulo, liefert den Rest einer Division
+int(3.414)  # Fliesskommazahl anch Integer casten
+
 ```
 #### Textoperatoren
 Texte (immer mit Hochkommata gekennzeichnet) können wir zusammenfügen (_concatenate_), in Grossbuchstaben umwandeln, Buchstaben austauschen oder einen Auszug (_substring_) davon anzeigen u.v.m.
@@ -93,7 +94,7 @@ Wir können diesen Wert zu einem beliebigen Zeitpunkt wieder aufgreifen, indem w
 ***
 - _Python ist _case sensitive_. Also immer aufpassen mit Gross- und Kleinschreibung_
 - _Bei Operationen mit verschiedenen Datentypen ist Vorsicht geboten. Manchmal ist eine Typenumwandlung (casting) notwendig._
-- _Mit `#` können wir Kommentare einfügen, die von Python ignoriert werden.
+- _Mit `#` können wir Kommentare einfügen, die von Python ignoriert werden._
 ***
 
 Ein für den Ablauf eines Programms unentbehrlicher Datentyp ist der _Boolean_. Dieser Datentyp kann nur zwei verschiedene Werte annehmen, nämlich `True` und `False`. Insbesondere bei Verzweigungen haben Boolesche Werte grosse Bedeutung.
@@ -103,10 +104,28 @@ Wir haben gelernt, dass ein Programm eine Menge an Schritten ist, die ein Comput
 
 Am eingängigsten für Programmier-Newbies und daher auch erste Wahl in diesem Kurs ist sicherlich die **Imperative Programmierung**: Die Befehlsabfolge eines Skripts wird gradlinig – mit grösseren oder kleineren Umwegen – von oben nach unten abgearbeitet.  
 
-Obwohl wir in diesem Tutorial nicht näher auf das Paradigma der **Objektorientierten Programmierung** (OOP) eingehen, müssen an dieser Stelle doch noch drei Begriffe eingeführt werden, die uns immer wieder begegnen:
+Im Kapitel zu den Grafischen Benutzeroberflächen werden wir einen kleinen Einblick ins Paradigma der **Objektorientierten Programmierung** (OOP) erhalten. Vorweg werden jetzt schon einmal ein paar wichtige Begriffe eingeführt, die uns immer wieder begegnen:
 Eine Variable eines bestimmten Typs ist immer ein **Objekt**. Dieses hat spezifische **Eigenschaften** und **Fähigkeiten**. Ein Objekt wird immer nach einer exakten Bauanleitung erstellt. Diese Anleitung nennt man **Klasse** (``class``), die Erstellung **Instanziierung**.
 In der realen Welt wäre also ein Schokoladenkuchen (=Objekt) ein nach einem bestimmten Rezept (=Klasse) zubereitetes (=instanziiertes) Gebäck.
 
+## Entwicklungsumgebung
+Bisher haben wir auf der Kommandozeile gearbeitet, und alle Eingaben wurden sofort verarbeitet und die Resultate ausgegeben. Dies vermittelt zwar das Gefühl, ein wahrer Hacker zu sein, ist aber wenig nachhaltig. Unsere Skripte wollen wir speichern können, um sie z.B. später auszuführen oder einer anderen Person zur Nutzung zu übergeben.  
+
+Es ist möglich, in einem einfachen Texteditor wie Notepad ein Pythonskript zu programmieren. Da dies nicht sehr komfortabel ist, gibt es eine Reihe verschiedener Texteditoren, die für das Programmieren mit Python optimiert sind. In letzter Zeit hat sich **PyCharm** als **IDE**’s (integrated development environment) etabliert.
+
+https://www.jetbrains.com/pycharm/download
+
+> **Übung: IDE**  
+> `ide.py` 
+>
+> - Mache dich mit der Oberfläche von PyCharm vertraut
+> - Probiere anhand der Beispiele von oben ein paar Zeilen Pythoncode zu programmieren
+> - Führe deinen Code aus. Nutze den Befehl `print()` zur Ausgabe deiner Resultate.
+
+Ein Pythonskript ist eine Textdatei mit der Dateiendung `py`. Ein als Datei abgespeichertes Pythonskript lässt sich auf verschiedene Arten ausführen:
+- Direkt im PyCharm über _Rechtsklick > Run_ oder den entsprechenden Button
+- Mit Doppelklick auf die Datei im Windows Explorer
+- Über die Windows Kommandozeile
 ## Collections
 Ein Hauptzweck von Programmierung ist es, wiederkehrende Aufgaben automatisiert ausführen. Dazu ist es nützlich, wenn wir diese Aufgaben zuerst auflisten und dann der Reihe nach abarbeiten.
 
@@ -207,27 +226,13 @@ anreden.items()  # verschachtelte Liste mit Key/Value-Tupel
 
 Das letzte Beispiel zeigt, dass Listen, Sets und Dictionaries eng verwandt sind und vielseitig miteinander kombiniert und ineinander verschachtelt (nested) werden können.
  
-## Entwicklungsumgebung
-Bisher haben wir auf der Kommandozeile gearbeitet, und alle Eingaben wurden sofort verarbeitet und die Resultate ausgegeben. Dies vermittelt zwar das Gefühl, ein wahrer Hacker zu sein, ist aber wenig nachhaltig. Unsere Skripte wollen wir speichern können, um sie z.B. später auszuführen oder einer anderen Person zur Nutzung zu übergeben.  
 
-Es ist möglich, in einem einfachen Texteditor wie Notepad ein Pythonskript zu programmieren. Da dies nicht sehr komfortabel ist, gibt es eine Reihe verschiedener Texteditoren, die für das Programmieren mit Python optimiert sind. In letzter Zeit hat sich **PyCharm** als **IDE**’s (integrated development environment) etabliert.
-
-https://www.jetbrains.com/pycharm/download
-
-> **Übung: IDE**  
-> 
-> Mache dich mit der Oberfläche von PyCharm vertraut. Probiere anhand der Beispiele von oben ein paar Zeilen Pythoncode zu programmieren. Führe deinen Code aus. Nutze den Befehl `print()` zur Ausgabe deiner Resultate. Speichere dein Skript regelmässig.
-
-Ein Pythonskript ist eine Textdatei mit der Dateiendung `py`. Ein als Datei abgespeichertes Pythonskript lässt sich auf verschiedene Arten ausführen:
-- Direkt im PyCharm über _Rechtsklick > Run_ oder den entsprechenden Button
-- Mit Doppelklick auf die Datei im Windows Explorer
-- Über die Windows Kommandozeile
 
 ## Kontrollstrukturen
 Mit Kontrollstrukturen wird der Programmablauf über Wiederholungen und Verzweigungen gesteuert.
 
 ### Schleifen
-Schleifen (**loops**) erlauben, Listen effizient abzuarbeiten. Beim sogenannten Iterieren wird eine bestimmte Operation **für jedes Element in einer Liste einmal** ausgeführt.
+Schleifen (_loops_) erlauben, Listen effizient abzuarbeiten. Beim sogenannten Iterieren wird eine bestimmte Operation **für jedes Element in einer Liste einmal** ausgeführt.
 
 ```python
 liste = [1, 2, 3, 4, 5]
@@ -236,17 +241,19 @@ for zahl in liste:
     print(quadratzahl)
 ```
 
-Bei jedem Schleifendurchlauf wird die Quadratzahl der aktuellen Zahl berechnet und angezeigt, bis alle Zahlen in der Liste einmal an der Reihe waren.  
-Den eingerückten Codeabschnitt nennt man **Anweisungsblock**. 
+Im Beispiel wird bei jedem Schleifendurchlauf die Quadratzahl der aktuellen Zahl berechnet und angezeigt, bis alle Zahlen aus der Liste einmal an der Reihe waren.  
 
 ***
-_Ein Anweisungsblock ist immer genau **vier Leerschläge** eingerückt. Python ist hier sehr strikt und verzeiht es nicht, wenn diese Regel nicht eingehalten wird._
+_Den eingerückten Codeabschnitt nennt man **Anweisungsblock**. Dieser ist immer genau **vier Leerschläge** eingerückt._  
+ 
+_Python ist hier sehr strikt und verzeiht es nicht, wenn diese Regel nicht eingehalten wird. Zum Glück unterstützt uns hier die IDE._
 ***
 
 Das Beispiel oben nennt man `for`-Schleife, da der Schleifendurchlauf **für eine bestimmte Anzahl Elemente** ausgeführt wird.  
 Die Anzahl Elemente ergibt sich aus der Listenlänge.
 
 > **Übung: `for`-Schleife**  
+> `summe.py`
 >
 > Berechne mit einer `for`-Schleife die Summe der Elemente in der Liste `[1, 2, 3, 4, 5, 6]`.  
 >
@@ -348,13 +355,15 @@ print("Deine Eingabe war: {}".format(user_param))
 - Der Userinput wird von Python immer als String interpretiert, auch wenn eine Zahl eingegeben wird. Der Input muss also gegebenenfalls zuerst in den richtigen Datentyp gecastet werden.
 
 > **Übung: Benutzereingaben**  
+> `kreis.py`
 > 
-> Schreibe je ein Skript für Möglichkeit 1 und 2, das folgendes kann:
+> Schreibe ein Skript, das folgendes kann:
 > - Der Benutzer soll einen Radius als Parameter eingeben
 > - Das Skript berechnet Durchmesser, Umfang und Fläche des Kreises
 >
-> _Tipp_:  
-> Importiere das Modul `math` und nutze die Konstante `pi` für die Kreiszahl.
+> _Tipps_:  
+> - entscheide selber, ob du `input()` oder `sys.argv[]` ensetzen möchtest.
+> - importiere das Modul `math` und nutze die Konstante `pi` für die Kreiszahl.
 
 ## Fehlerbehandlung
 Um zu verhindern, dass ein Skript abstürzt, weil der Benutzer eine falsche Eingabe gemacht hat (oder weil wir einen Bug in die Software eingebaut haben) gibt es das Konstrukt des Error Handlings.
@@ -396,7 +405,8 @@ In die allererste Zeile des Scripts exakt folgende Zeile einfügen:
 ```python
 # -*- coding: utf-8 -*-
 ```
-> **Übung: Textfile lesen und schreiben**
+> **Übung: Textfile lesen und schreiben**  
+> `namen.py`
 > 
 > 1. Erzeuge eine neue Textdatei mit dem Namen `personen.txt`.
 > 2. Schreibe einige Personen in die Liste im Format _Vorname_ _Nachname_.
@@ -404,6 +414,7 @@ In die allererste Zeile des Scripts exakt folgende Zeile einfügen:
 > 5. Wenn das klappt, schreibe die Vornamen in alphabetischer Reihenfolge in die Datei `vornamen_alphabetisch.txt` zu schreiben.
 > 
 > _Tipps:_
+> - Schritt 1 und 2 kannst du auch manuell ohne Programmieren machen.
 > - Nutze `.strip()` um Zeilenumbrüche zu eliminieren.
 > - Mit `.split(" ")` können Vor- und Nachname in ein Tupel mit zwei Einträgen aufgeteilt werden, die nachher über ihren Index `[]` angesprochen werden können.
 >- `with open` mit dem Parameterwert `"w"` öffnet einen Schreibzugriff (**w**rite) auf eine Datei. Eine bestehende Datei wird überschrieben, eine neue automatisch angelegt.
@@ -467,20 +478,26 @@ print(primzahl(37))
 _Wenn Funktionen ein komplexeres mathematisches Problem sehr effizient lösen, spricht man häufig von einem **Algorithmus**._  
 _Obiges Beispielskript zu den Primzahlen liefert zwar korrekte Resultate, ist aber wenig effizient. Sieht jemand, warum?_
 ***
-> **Übung: Funktion**
+> **Übung: Funktion**  
+> `kreis_funktion.py`
+> 1. Kopiere das Skript `kreis.py` und speichere es unter `kreis_funktion.py`
+> 2. Erweitere das neue Skript, dass du für die Berechnung von Fläche, Umfang und Durchmesser je eine Funktion erstellst und dann aufrufst.
+> 3. Schreibe zudem eine neue Funktion, die die Benutzereingabe auf Gültigkeit prüft (z.B. Zahlen und keine Buchstaben), bevor sie verarbeitet wird.
 > 
-> 1. Erweitere dein Programm aus der Übung zu den Kreisen so, dass du für die Berechnung von Fläche, Umfang und Durchmesser je eine Funktion erstellst und dann aufrufst.
-> 2. Schreibe zudem eine neue Funktion, die die Benutzereingabe auf Gültigkeit prüft (z.B. Zahlen und keine Buchstaben), bevor sie verarbeitet wird. Nutze dazu das Konzept der Fehlerbehandlung `try`/`except`.
-
+> _Tipp:_  
+> Nutze für die Gültigkeitsprüfung das _Casting_ und das Konzept der Fehlerbehandlung `try`/`except`.
+***
 > **Übung: Lottosimulation**  
+> `lotto.py`
 >
 > Wie gross ist die Wahrscheinlichkeit, im Schweizer Zahlenlotto 6 Richtige zu haben?
 > 
 > _Tipps:_  
 > - Definiere eine Funktion, die eine Lottoziehung (6 aus 42) simulieren kann
-> - `random.randint(1, 42)` liefert eine Zufallszahl zwischen 1 und 42. Denk aber daran, dass eine Zahl zur einmal gezogen werden kann
+> - `random.randint(1, 42)` liefert eine Zufallszahl zwischen 1 und 42.
+> - Denk daran, dass eine Zahl zur einmal gezogen werden kann. Erinnerst du dich an `set()`
 > - Erstelle eine einfache Benutzereingabe für die Abgabe der 6 Tipps
-> - Führe nun deine Funktion solange aus, bis die sechs Zufallszahlen mit den eingegebenen Tipps übereinstimmen
+> - Führe deine Funktion in einer `while`-Schleife solange aus, bis die sechs Zufallszahlen mit den eingegebenen Tipps übereinstimmen
 > - Zähle die Durchläufe
 
 ## Zeit und Datum
@@ -488,7 +505,7 @@ Zeit und Datum bilden eigene Datentypen, mit denen wir ganz spezifische Berechnu
 Dazu wird die Standardfunktionalität von Python mit dem Modul `time` erweitert.  
 
 ***
-_Python enthält weitere Module für Datum und Zeit, wie `datetime` oder `calendar`. Für uns reicht aber vorerst `time`.
+_Python enthält weitere Module für Datum und Zeit, wie `datetime` oder `calendar`. Für uns reicht aber vorerst `time`._
 ***
 
 ### The Epoch
@@ -503,6 +520,7 @@ In Python gibt es zudem das Zeit-Tupel, das immer aus den folgenden neun Element
 - die laufende Nummer des Tages innerhalb eines Jahres wird von Element 7 geliefert.
 - Informationen über den Status der Sommerzeit liefert das letzte Element 8.
 
+### Berechnungen
 Wenn wir die Konvertierung zwischen Zeit-Tupel und Sekunden seit 1970 beherrschen, können wir umfangreiche Zeitberechnungen vornehmen.  
 Dank spezieller Funktionen können wir Zeiten auch von und nach Text konvertieren.
 
@@ -537,8 +555,9 @@ Aus einem Zeit-Tupel können wir ein bestimmtes Element über den Index oder üb
 Ausführliche Übersicht: https://docs.python.org/3/library/time.html
 
 > **Übung: Geburtstag**  
+> `geburtstag.py`
 >
-> Schreibe das Programm `geburtstag.py` mit interaktiver Benutzereingabe, das folgende Fragen beantwortet:
+> Schreibe ein Programm mit interaktiver Benutzereingabe, das folgende Fragen beantwortet:
 > - An welchem Wochentag wurdest du geboren?
 > - An welchem Wochentag feierst du deinen 30. Geburtstag?
 
@@ -557,11 +576,11 @@ Anhand des aufgeführten Beispiels wissen wir, dass unsere URL so aussehen muss:
 
 https://geodesy.geo.admin.ch/reframe/wgs84tolv03?easting=7.452&northing=46.928&format=json  
 
-Im Browserfenster sehen wir nun das Resultat
+Im Browserfenster sehen wir nun das Resultat  
 `{"easting": "601017.990423179", "northing": "197433.9052806796"}`
 
-Nun gilt es das, was wir im Internetbrowser können, mit Python nachzustellen. Wir basteln dafür Schritt für Schritt unsere URL mit den Parametern zusammen. 
-Für die Koordinaten werden Variablen verwendet.
+Nun gilt es das, was wir im Internetbrowser können, mit Python nachzustellen. 
+Wir basteln die URL mit den Parametern zusammen zusammen und verwenden Variablen für die Koordinaten.
 
 ***
 _Für die Kommunikation mit dem Internet ist das Modul `requests` bestens geeignet.  
@@ -593,7 +612,8 @@ print(result["easting"])
 print(result["northing"])
 ```
 
-> **Übung: Koordinatentransformation** 
+> **Übung: Koordinatentransformation**  
+> `koordinaten.py`
 >
 > Das Gebäude von swisstopo hat die WGS84-Koordinaten 46.928°N 7.452°E. Unser Schulungsgebäude liegt bei der LV03-Koordinate 600050m 198760m.  
 > - Wie weit sind die beiden Gebäude (Luftlinie) voneinander entfernt?
@@ -602,9 +622,9 @@ print(result["northing"])
 > - gehe schrittweise vor
 > - programmiere zuerst die Transformation
 > - berechne danach die Distanz (Pythagoras)
-
+***
 > **Übung: Webdienste BGDI**  
-> 
+> `adresse.py`
 > 1. Studiere die Dokumentation zu den Webdiensten der Bundes-Geodateninfrastruktur.  
 > https://api3.geo.admin.ch/services/sdiservices.html#search  
 > 2. Versuche zu einer beliebigen Adresse die Koordinaten zu erhalten.  
@@ -710,8 +730,10 @@ _Komplexere Layouts sind mit dem `grid`-Pattern möglich, wir beschränken uns a
 > 3. Setzte als Text für jedes der vier Labels drei zufällige Grossbuchstaben
 >
 > _Tipp:_  
-> Das ganze Alphabet als Liste erhälst du z.B. so:  
+> - Das ganze Alphabet als Liste erhälst du z.B. so:  
 > `abc = string.ascii_uppercase`
+> - Das Label-Widget eine Eigenschaft für die Schriftart, die über den Parameter `font` gesteuert werden kann:  
+> `font=("Arial", 100)`
 >
 > _Beispiel:_  
 > ![sehtest](screenshots/visual.PNG)
@@ -780,12 +802,18 @@ _Es ist aber niemand böse, wenn diese Begriffe gleichwertig verwendet werden._
 > 1. Kopiere dein Skript `sehtest.py` und speichere es unter `sehtest_refresh.py`.
 > 2. Erweitere das neue Skript nun durch einen Button, bei dessen Betätigung neue Zufallsbuchstaben angezeigt werden.
 > 3. Versuche Darstellung (im Konstruktor `__init__`) und Logik (z.B. in der Methode `refresh`) zu trennen
-
+***
 > **Übung: Lichtschalter**  
 > `lichtschalter.py`
 > 
 > Programmiere eine kleine Applikation, die einen Lichtschalter simuliert, indem nach Betätigung eines Buttons z.B. Hintergrundfarbe oder Text hin- und her wechseln.   
->Das könnte dann ungefähr so aussehen.
+> 
+> _Tipp:_  
+> Den Zustand on/off wirst du vermutlich als Boolean in einer Variablen speichern wollen. Einen Boolean ins Gegenteil umwandeln geht so:  
+> `is_on = not is_on`
+
+>
+> _Beispiel:_  
 > ![off](screenshots/light_off.PNG) 
 >
 > ![on](screenshots/light_on.PNG)
