@@ -1,8 +1,8 @@
 # Python Tutorial
 
-##Inhalt
+## Inhalt
 
-##Einleitung
+## Einleitung
 Python ist eine einfach zu lernende, aber mächtige Programmiersprache mit einer eleganten Syntax. Als **interpretierte Sprache** ist sie sowohl für Skripte als auch für die Erweiterung von anpassbaren Applikationen hervorragend geeignet.  
 
 Dieses Tutorial stellt die Grundkonzepte und Eigenschaften der Sprache Python vor. Ziel ist nicht die umfangreiche und vollständige Behandlung sämtlicher Sprachmerkmale von Python, sondern die Vermittlung der wichtigsten Eigenschaften, um einen Eindruck von dem zu bekommen, was Python ist, und wie es in der professionellen Entwicklungsumgebung eingesetzt werden kann.  
@@ -25,39 +25,39 @@ Legen wir los und sagen unserem Computer, was er zu tun hat._
 In der Einleitung stand, dass Python eine interpretierte Sprache ist. Dies bedeutet, dass der geschriebene Programmcode nicht zuerst in unleserlichen binären Computercode (`001011001010`) übersetzt (kompiliert) werden muss, sondern dass der menschenlesbare Code direkt ausgeführt (interpretiert) wird. Python unterscheidet sich dadurch von anderen Programmiersprachen wie z.B. Java oder C#.
 
 > **Übung: Erste Schritte**  
+> 
 > Suche im Windows-Startmenu nach _Python command line_ und starte die Kommandozeile.  
 > ![startmenu](screenshots/startmenu.PNG)
 > ![startmenu](screenshots/commandline.PNG)
 > 
 > Nun können wir unsere Anweisungen in Textform eingeben.
 > Tippe nacheinander folgende Befehle ein, bestätige jeweils mit Enter.
-> ```
-> 'hello world'
-> 1234
-> 1 + 2 + 3 + 4
-> '1' + '2' + '3' + '4'
-> 1 + 2 + '3' + '4'
-> text1 = 'hello'
-> text2 = 'world'
-> text1 + text2
-> zahl1 = 123
-> zahl2 = 987.654
-> zahl1 – zahl2
-> zahl1 + text1
-> print(text1)
-> str(zahl2) + text1.upper()
-> text1.replace('o', 'OO')
-> text1.replace('o', 'O'*zahl1)
-> round(zahl2, 0)
-> int(zahl2) #hello world
-> text2[2]
-> TEXT2
-> (text1 + text2)[3:-3]
-> 3/2
-> 3//2
-> 3/2.0
-> 3/0
-> ```
+> 
+> `'hello world'`  
+> `1234`  
+> `1 + 2 + 3 + 4`  
+> `'1' + '2' + '3' + '4'`  
+> `1 + 2 + '3' + '4'`  
+> `text1 = 'hello'`  
+> `text2 = 'world'`  
+> `text1 + text2`  
+> `zahl1 = 123`  
+> `zahl2 = 987.654`  
+> `zahl1 – zahl2`  
+> `zahl1 + text1`  
+> `print(text1)`  
+> `str(zahl2) + text1.upper()`  
+> `text1.replace('o', 'OO')`  
+> `text1.replace('o', 'O'*zahl1)`  
+> `round(zahl2, 0)`  
+> `int(zahl2) #hello world`  __
+> `text2[2]`  
+> `TEXT2`  
+> `(text1 + text2)[3:-3]`  
+> `3/2`  
+> `3//2`  
+> `3/2.0`  
+> `3/0`  
 > Mit dem Befehl `exit()` kannst du die Kommandozeile schliessen.
 
 ## Grundlagen der Programmierung
@@ -215,10 +215,11 @@ Es ist möglich, in einem einfachen Texteditor wie Notepad ein Pythonskript zu p
 https://www.jetbrains.com/pycharm/download
 
 > **Übung: IDE**  
+> 
 > Mache dich mit der Oberfläche von PyCharm vertraut. Probiere anhand der Beispiele von oben ein paar Zeilen Pythoncode zu programmieren. Führe deinen Code aus. Nutze den Befehl `print()` zur Ausgabe deiner Resultate. Speichere dein Skript regelmässig.
 
 Ein Pythonskript ist eine Textdatei mit der Dateiendung `py`. Ein als Datei abgespeichertes Pythonskript lässt sich auf verschiedene Arten ausführen:
-- Direkt im PyCharm über Rechtsklick > Run oder den entsprechenden Button
+- Direkt im PyCharm über _Rechtsklick > Run_ oder den entsprechenden Button
 - Mit Doppelklick auf die Datei im Windows Explorer
 - Über die Windows Kommandozeile
 
@@ -231,8 +232,8 @@ Schleifen (**loops**) erlauben, Listen effizient abzuarbeiten. Beim sogenannten 
 ```python
 liste = [1, 2, 3, 4, 5]
 for zahl in liste:
-	quadratzahl = zahl ** 2
-	print(quadratzahl)
+    quadratzahl = zahl ** 2
+    print(quadratzahl)
 ```
 
 Bei jedem Schleifendurchlauf wird die Quadratzahl der aktuellen Zahl berechnet und angezeigt, bis alle Zahlen in der Liste einmal an der Reihe waren.  
@@ -246,16 +247,18 @@ Das Beispiel oben nennt man `for`-Schleife, da der Schleifendurchlauf **für ein
 Die Anzahl Elemente ergibt sich aus der Listenlänge.
 
 > **Übung: `for`-Schleife**  
+>
 > Berechne mit einer `for`-Schleife die Summe der Elemente in der Liste `[1, 2, 3, 4, 5, 6]`.  
-> Tipp: Innerhalb eines Anweisungsblocks können wir auf Variablen von ausserhalb des Blocks zugreifen und diese verändern. Dazu wird eine Variable vor dem Block initialisiert (z.B. `summe = 0`) und dieser Wert bei jedem Schleifendurchlauf um die aktuelle Zahl erhöht.
+>
+> _Tipp_: Innerhalb eines Anweisungsblocks können wir auf Variablen von ausserhalb des Blocks zugreifen und diese verändern. Dazu wird eine Variable vor dem Block initialisiert (z.B. `summe = 0`) und dieser Wert bei jedem Schleifendurchlauf um die aktuelle Zahl erhöht.
 
 Häufig gibt es auch den Fall, dass wir zu Beginn nicht genau wissen, wie oft eine Anweisung ausgeführt werden soll. Die Anzahl Durchläufe hängt dann von einer Bedingung ab.
 
 ```python
 zahl = 1
 while zahl <= 10:
-	print(zahl)
-	zahl += 0.0123456
+    print(zahl)
+    zahl += 0.0123456
 print("Schleife fertig")
 ```
 
@@ -272,14 +275,14 @@ Die Prüfung, ob eine Bedingung erfüllt ist oder nicht, ist einer der wichtigst
 Verzweigungen werden mit `if`, `elif` und `else` gesteuert. Es ist erlaubt, dass `if` alleine steht und keine weiteren Prüfungen stattfinden sollen. Beliebig viele alternative Bedingungen können mit `elif` geprüft werden. Falls bis dahin noch keine der Bedingungen erfüllt wurde, wird der Anweisungsblock nach `else` ausgeführt. 
 ```python
 for zahl in range(10):
-	if zahl == 3:
-		print(zahl, "juhee, drei")
-	elif zahl == 7:
-		print(zahl, "yepee, sieben")
-	elif zahl == 9:
-		print(zahl, "yes, neun")
-	else:
-		print(zahl, "eine andere Zahl")
+    if zahl == 3:
+        print(zahl, "juhee, drei")
+    elif zahl == 7:
+        print(zahl, "yepee, sieben")
+    elif zahl == 9:
+        print(zahl, "yes, neun")
+    else:
+        print(zahl, "eine andere Zahl")
 ```
 
 `range(10)` ist eine Kurzschreibweise für eine Liste `[0,1,2,3,4,5,6,7,8,9]`. Auch hier gilt wieder: Die Nummerierung beginnt bei `0`, dafür ist die `10` nicht inklusive.  
@@ -289,7 +292,7 @@ Im Gegensatz zur Initialisierung einer Variablen `=` besteht der Vergleichsopera
 Neben dem ist-gleich-Operator gibt es zahlreiche weitere Vergleichsoperatoren:  
 
 | Operator | Bedeutung | Beispiel |
-| --- | --- | --- |
+| :---: | :---: | :---: |
 | `==` | ist gleich | `"a" == "b"` |
 | `!=` | ist ungleich | `"a" == "b"` |
 | `<` | ist kleiner als | `1 < 2` |
@@ -303,132 +306,213 @@ Das Resultat eines Vergleichs ist immer entweder `True` oder `False`. Diese Bool
 Artverwandt sind spezielle Funktionen, die als Resultat einen Boolean zurückgeben:
 
 | Funktion | Bedeutung | Beispiel |
-| --- | --- | --- |
+| :---: | :---: | :---: |
 | `.startswith()` | String beginnt mit | `"Hello".startswith("h")` |
 | `.endswith()` | String endet mit | `"World".endwith("d")` |
 	
 Die verschiedenen Vergleichsoperatoren lassen sich beliebig kombinieren oder negieren. Dazu werden die Befehle `and`, `or` und `not` verwendet. Einzelne Bedingungen können mit Klammern gruppiert werden.
 
-Bei einer Kombination von Schleifen und Bedingungen kann der Schleifendurchlauf mit dem Befehl break aktiv unterbrochen werden.
+Bei einer Kombination von Schleifen und Bedingungen kann der Schleifendurchlauf mit dem Befehl `break` aktiv unterbrochen werden.  
+
+```python
 zahl = 1
 while zahl <= 10:
-	print(zahl)
-	if zahl == 5:
-		print("Abbruchkriterium erfuellt")
-		break
-	zahl += 1
+    print(zahl)
+    if zahl == 5:
+        print("Abbruchkriterium erfuellt")
+        break
+    zahl += 1
 print("Schleife fertig")
-Artverwandt ist der Befehl continue. Damit werden allfällige restliche Befehle im Anweisungsblock übersprungen, und die Schleife startet mit dem nächsten Element von vorne neu.
-Benutzereingaben
-Bravo, ihr habt eure ersten eigenständig laufenden Programme geschrieben! Es ist aber – mit Verlaub – noch sehr langweilig, da es im Ablauf sehr starr ist und der Benutzer keine Möglichkeit hat, mit der Software zu interagieren.
-Ein Skript beginnt meistens mit der Variablendeklaration und -initialisierung. Häufig möchten die Variablenwerte nicht fix als Konstanten ins Skript integriert, sondern dynamisch vom Benutzer eingegeben werden. Diese so genannten Parameter können auf zwei Arten dem Skript übergeben werden:
-1.	Der Benutzer kennt die benötigten Parameter und gibt die Werte an, bevor er das Skript startet
-2.	import sys
-3.	user_param = sys.argv[1]
-print("Deine Eingabe war: {}".format(user_param))
-4.	Das Skript fordert den Benutzer zur Laufzeit auf, eine Eingabe zu tätigen
-5.	user_param = input("Bitte eine Zahl eingeben: ")
-print("Deine Eingabe war: {}".format(user_param))
-•	Mit dem Befehl import können wir die Standardfunktionalität von Python beliebig erweitern. Das Modul sys beinhaltet z.B. viele Funktionen des Betriebssystems, um mit diesem kommunizieren zu können.
-•	Wird das Skript in der Windows Kommandozeile gestartet, werden alle Benutzereingaben in der Liste sys.argv gespeichert. Der erste Eintrag (an der nullten Indexposition) ist immer der Dateiname des Skripts selbst. Ab dem zweiten Eintrag (ab Index 1) folgen die Parameter. Wenn es mehrere Parameter gibt, werden diese bei der Eingabe auf der Kommandozeile mit einem Leerschlag getrennt. Enthält der Parameter selber Leerschläge, gehören Anführungszeichen drum.
-•	Der Userinput wird von Python immer als String interpretiert, auch wenn eine Zahl eingegeben wird. Der Input muss also gegebenenfalls zuerst in den richtigen Datentyp gecastet werden.
+```
 
-Übung: Benutzereingaben
-Schreibe je ein Skript für Möglichkeit 1 und 2, das folgendes kann:
-•	Der Benutzer soll einen Radius als Parameter eingeben
-•	Das Skript berechnet Durchmesser, Umfang und Fläche des Kreises
- Importiere das Modul math und nutze die Konstante pi für die Kreiszahl.
-Fehlerbehandlung
+Artverwandt ist der Befehl `continue`. Damit werden allfällige restliche Befehle im Anweisungsblock übersprungen, und die Schleife startet mit dem nächsten Element von vorne neu.  
+
+## Benutzereingaben
+Bravo, ihr habt eure ersten eigenständig laufenden Programme geschrieben! Es ist aber – mit Verlaub – noch sehr langweilig, da es im Ablauf sehr starr ist und der Benutzer keine Möglichkeit hat, mit der Software zu interagieren.  
+
+Ein Skript beginnt meistens mit der Variablendeklaration und -initialisierung. Häufig möchten die Variablenwerte nicht fix als Konstanten ins Skript integriert, sondern dynamisch vom Benutzer eingegeben werden. Diese so genannten Parameter können auf zwei Arten dem Skript übergeben werden:  
+1. Der Benutzer kennt die benötigten Parameter und gibt die Werte an, _bevor_ er das Skript startet  
+2. Das Skript fordert den Benutzer _zur Laufzeit_ auf, eine Eingabe zu tätigen
+```python
+import sys
+user_param = sys.argv[1]
+print("Deine Eingabe war: {}".format(user_param))
+```
+```python
+user_param = input("Bitte eine Zahl eingeben: ")
+print("Deine Eingabe war: {}".format(user_param))
+```
+- Mit dem Befehl `import` können wir die Standardfunktionalität von Python beliebig erweitern. Das Modul `sys` beinhaltet z.B. viele Funktionen des Betriebssystems, um mit diesem kommunizieren zu können.
+- Wird das Skript in der Windows Kommandozeile gestartet, werden alle Benutzereingaben in der Liste `sys.argv` gespeichert. Der erste Eintrag (an der nullten Indexposition) ist immer der Dateiname des Skripts selbst. Ab dem zweiten Eintrag (ab Index 1) folgen die Parameter. Wenn es mehrere Parameter gibt, werden diese bei der Eingabe auf der Kommandozeile mit einem Leerschlag getrennt. Enthält der Parameter selber Leerschläge, gehören Anführungszeichen drum.
+- `.format` ist eine Möglichkeit, in Strings einen Platzhalter `{}` durch deinen Variablenwert zu ersetzen.
+- Der Userinput wird von Python immer als String interpretiert, auch wenn eine Zahl eingegeben wird. Der Input muss also gegebenenfalls zuerst in den richtigen Datentyp gecastet werden.
+
+> **Übung: Benutzereingaben**  
+> 
+> Schreibe je ein Skript für Möglichkeit 1 und 2, das folgendes kann:
+> - Der Benutzer soll einen Radius als Parameter eingeben
+> - Das Skript berechnet Durchmesser, Umfang und Fläche des Kreises
+>
+> _Tipp_:  
+> Importiere das Modul `math` und nutze die Konstante `pi` für die Kreiszahl.
+
+## Fehlerbehandlung
 Um zu verhindern, dass ein Skript abstürzt, weil der Benutzer eine falsche Eingabe gemacht hat (oder weil wir einen Bug in die Software eingebaut haben) gibt es das Konstrukt des Error Handlings.
+```python
 try:
-	1 / 0
+    1 / 0
 except Exception as e:
-	print e
+    print(e)
 finally:
-	print("Ich werde auf jeden Fall ausgefuehrt")
-Das Error Handling sowie ausführliche Tests des eigenen Codes sind sehr wichtige Bestandteile eines Programms bzw. der Entwicklungsphase. Die Konzepte dazu sind aber sehr umfangreich und eher schwerverdaulich, so dass wir uns in diesem Tutorial mit der einfachen try/except/finally Struktur begnügen.
-Lesen und schreiben von Dateien
-Bei den bisher geschriebenen Skripten ist das Resultat immer eine Ausgabe auf dem Bildschirm. In vielen Fällen ist es aber gewünscht, die Resultate z.B. in eine Datei zu schreiben. Wir sollten also das Schreiben und Lesen von Dateien mittels Python beherrschen.
+    print("Ich werde auf jeden Fall ausgefuehrt")
+```
+Das Error Handling sowie ausführliche Tests des eigenen Codes sind sehr wichtige Bestandteile eines Programms bzw. der Entwicklungsphase. Die Konzepte dazu sind aber sehr umfangreich und eher schwer verdaulich, so dass wir uns in diesem Tutorial mit der einfachen `try`/`except`/`finally` Struktur begnügen.
+
+## Lesen und schreiben von Dateien
+Bei den bisher geschriebenen Skripten ist das Resultat immer eine Ausgabe auf dem Bildschirm. In vielen Fällen ist es aber gewünscht, die Resultate z.B. in eine Datei zu schreiben.  
+Wir sollten also das Schreiben und Lesen von Dateien mittels Python beherrschen.
+```python
 datei = r"D:\tutorial\textfile.txt"
-with open(datei, "r") as r:
-	inhalt = r.readlines()
+with open(datei, "r") as lesezugriff:
+    inhalt = lesezugriff.readlines()
 print(inhalt)
-•	Das with open Statement mit dem Parameterwert r erlaubt es, einen Lesezugriff (read) auf eine Datei herzustellen.
-•	Die Funktion readlines() liefert eine Liste mit je einem Element pro Zeile
-•	Der Zeilenumbruch wird als \n ebenfalls gelesen.
-Backslash
-In einem String können Backslashes vor bestimmten Buchstaben eine besondere Bedeutung haben (\n für new line, \t für tabulator etc.). Wenn dies nicht gewünscht ist, kann ein kleines r direkt vor den String gesetzt werden. Dann ist ein Backslash einfach ein Backslash.
+
+```
+- Das `with open` Statement mit dem Parameterwert `"r"` erlaubt es, einen Lesezugriff (**r**ead) auf eine Datei herzustellen. Im Beispiel heisst er sogar `lesezugriff`, die Benennung ist aber frei.
+- Die Funktion `readlines()` liefert eine Liste mit je einem Element pro Zeile
+- Der Zeilenumbruch wird als \n ebenfalls gelesen.
+***
+_In einem String können Backslashes vor bestimmten Buchstaben eine besondere Bedeutung haben (`\n` für new line, `\t` für tabulator etc.). Wenn dies nicht gewünscht ist, kann ein kleines `r` direkt vor den String gesetzt werden. Dann ist ein Backslash einfach ein Backslash._
+```python
 print("das ist ein \text")
 print(r"das ist ein \text")
-Sonderzeichen
-Sonderzeichen und Umlaute führen beim Programmieren immer wieder zu Problemen. In Variablennamen sind sie sogar verboten. Am besten wäre es, ganz darauf zu verzichten, aber da wir als Programmierer nicht immer die Kontrolle darüber haben (Dateipfade oder -inhalte von Dritten), müssen wir einen Trick anwenden (der meistens, aber leider nicht immer) funktioniert:
-In die allererste Zeile des Scripts exakt folgende Zeile einfügen:
-# -*- coding: utf-8 -*-
-Übung: Textfile lesen und schreiben
-Erzeuge eine neue Textdatei mit dem Namen personen.txt. Schreibe einige Personen in die Liste im Format Vorname Nachname.
- im with open Befehl öffnet der Parameterwert w einen Schreibzugriff (write) auf eine Datei. Eine bestehende Datei wird überschrieben, eine neue automatisch angelegt.
- Mit .split(" ") können Vor- und Nachname in ein Tupel mit zwei Einträgen aufgeteilt werden, die nachher über ihren Index [in eckigen Klammern] angesprochen werden können.
- Nutze .strip() um Zeilenumbrüche zu eliminieren.
- Versuche die Namen aus der Datei personen.txt zu laden, die Vornamen auf dem Bildschirm zu zeigen und sie in alphabetischer Reihenfolge in die Datei vornamen_alphabetisch.txt zu schreiben..
- Verwende write() oder writelines() um die Zeilen in das Textfile zu schreiben.
-Funktionen
-Wie ein Skript als Ganzen dazu dient, wiederkehrende Aufgaben zu automatisieren, dienen Funktionen dazu wiederkehrende Anweisungsfolgen innerhalb des Skripts zu bündeln. Das tönt komplizierter als es ist, und wir sind bisher auch schon zahlreichen Funktionen begegnet.
-Die Syntax, das heisst die Grammatik der Programmiersprache, sieht allgemein so aus:
-objekt.funktion(parameter)
+```
+***
+## Sonderzeichen
+Sonderzeichen und Umlaute führen beim Programmieren immer wieder zu Problemen. In Variablennamen sind sie sogar verboten.  
+Am besten wäre es, ganz darauf zu verzichten, aber da wir als Programmierer nicht immer die Kontrolle darüber haben (Dateipfade oder -inhalte von Dritten), müssen wir einen Trick anwenden (der meistens, aber leider nicht immer) funktioniert:  
 
-Funktion 
-print("hello world".replace("l", ""))
-Das Objekt ist in diesem Fall ein String, die Funktion (Fähigkeit) heisst replace() und benötigt zwei Parameter.
-Für die verschiedensten Objektarten bietet Python zahlreiche vorgefertigte Funktionen (built-in) an, z.B. .sum(), .upper(), .open(), .append() u.v.m. Wenn eine Funktion keine Parameter benötigt, müssen die Klammern trotzdem geschrieben werden.
+In die allererste Zeile des Scripts exakt folgende Zeile einfügen:
+```python
+# -*- coding: utf-8 -*-
+```
+> **Übung: Textfile lesen und schreiben**
+> 
+> 1. Erzeuge eine neue Textdatei mit dem Namen `personen.txt`.
+> 2. Schreibe einige Personen in die Liste im Format _Vorname_ _Nachname_.
+> 4. Versuche zuerst, die Namen aus der Datei `personen.txt` zu laden und die Vornamen auf dem Bildschirm zu zeigen
+> 5. Wenn das klappt, schreibe die Vornamen in alphabetischer Reihenfolge in die Datei `vornamen_alphabetisch.txt` zu schreiben.
+> 
+> _Tipps:_
+> - Nutze `.strip()` um Zeilenumbrüche zu eliminieren.
+> - Mit `.split(" ")` können Vor- und Nachname in ein Tupel mit zwei Einträgen aufgeteilt werden, die nachher über ihren Index `[]` angesprochen werden können.
+>- `with open` mit dem Parameterwert `"w"` öffnet einen Schreibzugriff (**w**rite) auf eine Datei. Eine bestehende Datei wird überschrieben, eine neue automatisch angelegt.
+> - Verwende `write()` oder `writelines()` um die Zeilen in das Textfile zu schreiben. Denke an die Zeilenumbrüche `\n`.
+
+## Funktionen
+Wie ein Skript als Ganzen dazu dient, wiederkehrende Aufgaben zu automatisieren, dienen Funktionen dazu wiederkehrende Anweisungsfolgen innerhalb des Skripts zu bündeln.  
+Das tönt komplizierter als es ist, und wir sind bisher auch schon zahlreichen Funktionen begegnet.
+Die **Syntax**, das heisst die Grammatik der Programmiersprache, sieht allgemein so aus:
+```
+objekt.funktion(parameter)
+```
+Ein konkretes Beispiel:
+```python
+"hello world".replace("l", "")
+```
+Das Objekt ist in diesem Fall der String `"hello world"`, die Funktion heisst `replace()` und benötigt zwei Parameter.  
+
+### Built-ins
+Für die verschiedensten Objektarten bietet Python zahlreiche vorgefertigte Funktionen (**built-in**) an, z.B. `.sum()`, `.upper()`, `.open()`, `.append()` u.v.m.  
+
+Wenn eine Funktion keine Parameter benötigt, müssen die Klammern trotzdem geschrieben werden. 
+
+### Eigene Funktionen
+
 Häufig kommt es vor, dass für ein ganz spezifisches Problem noch keine Funktion zur Verfügung steht. Mit Python können wir massgeschneiderte Funktionen selber programmieren.
-# Methodendefinition
+```python
+# Definition
 def addition(zahl1, zahl2):
     summe = zahl1 + zahl2
     return summe
 
-# Methodenaufruf
-print(addition(4, 9))
-•	Eine Funktion wird immer mit dem Befehl def, gefolgt vom Namen und den benötigten Parametern in Klammern definiert.
-•	Eine Methode hat meistens einen Rückgabewert, der hinter dem Befehl return steht.
-•	Die Methode muss im Skript immer definiert werden, bevor sie aufgerufen wird.
-Das Beispiel oben veranschaulicht zwar den Aufbau einer Funktion, sie ergibt aber wenig Sinn, da wir genauso schreiben könnten:
-print(4 + 9)
+# Aufruf
+result = addition(4, 9)
+print(result)
+```
+
+- Eine Funktion wird immer mit dem Befehl `def`, gefolgt vom Namen und den benötigten Parametern in Klammern definiert.
+- Eine Methode hat meistens einen Rückgabewert, der hinter dem Befehl `return` steht.
+- Die Methode muss im Skript immer definiert werden, _bevor_ sie aufgerufen wird.
+
+Das Beispiel oben veranschaulicht zwar den Aufbau einer Funktion, sie ergibt aber wenig Sinn, da wir genauso schreiben könnten `print(4 + 9)`. 
+
 Das folgende Beispiel ist schon viel sinnvoller. Die Funktion prüft, ob eine Zahl eine Primzahl ist.
+```python
 def primzahl(zahl):
-	if zahl < 2:
-		return False
-	else:
-		for i in range(2, zahl):
-			if zahl % i == 0:
-				return False
-	return True
+    if zahl < 2:
+        return False
+    else:
+        for i in range(2, zahl):
+            if zahl % i == 0:
+                return False
+    return True
 
 
 print(primzahl(37))
-•	Der Operator % (modulo) liefert den Rest einer Division
-•	Wird innerhalb einer Methode der Befehl return erreicht, endet die Methode (ähnlich break) Übung 8: Zeitansage
-Übung: Funktion
-Erweitere dein Programm aus der Übung zu den Kreisen so, dass du für die Berechnung von Fläche, Umfang und Durchmesser je eine Funktion erstellst und dann aufrufst.
-Schreibe zudem eine neue Funktion, die die Benutzereingabe auf Gültigkeit prüft, bevor sie verarbeitet wird. Nutze dazu das Konzept der Fehlerbehandlung try/except.
+```
+- Der Operator `%` (modulo) liefert den Rest einer Division
+- Wird innerhalb einer Funktion der Befehl `return` erreicht, endet die Funktion sofort (ähnlich `break` bei den Schleifen)
+***
+_Wenn Funktionen ein komplexeres mathematisches Problem sehr effizient lösen, spricht man häufig von einem **Algorithmus**._  
+_Obiges Beispielskript zu den Primzahlen liefert zwar korrekte Resultate, ist aber wenig effizient. Sieht jemand, warum?_
+***
+> **Übung: Funktion**
+> 
+> 1. Erweitere dein Programm aus der Übung zu den Kreisen so, dass du für die Berechnung von Fläche, Umfang und Durchmesser je eine Funktion erstellst und dann aufrufst.
+> 2. Schreibe zudem eine neue Funktion, die die Benutzereingabe auf Gültigkeit prüft (z.B. Zahlen und keine Buchstaben), bevor sie verarbeitet wird. Nutze dazu das Konzept der Fehlerbehandlung `try`/`except`.
 
-Übung: Lottosimulation
-Wie gross ist die Wahrscheinlichkeit, im Schweizer Zahlenlotto 6 Richtige zu haben?
-Zeit und Datum
-Zeit und Datum bilden eigene Datentypen, mit denen wir ganz spezifische Berechnungen anstellen können. Dazu wird die Standardfunktionalität von Python mit dem Modul time erweitert.
-Berechnungen mit Zeit und Datum können sehr kompliziert sein. In vielen Programmiersprachen hat man sich deshalb darauf geeinigt, einen Zeitpunkt anhand der verstrichenen Sekunden seit dem 1. Januar 1970 (since the Epoch) anzugeben. Auf diese Weise lassen sich verschiedene Zeiten und Zeitdifferenzen am einfachsten berechnen.
+> **Übung: Lottosimulation**  
+>
+> Wie gross ist die Wahrscheinlichkeit, im Schweizer Zahlenlotto 6 Richtige zu haben?
+> 
+> _Tipps:_  
+> - Definiere eine Funktion, die eine Lottoziehung (6 aus 42) simulieren kann
+> - `random.randint(1, 42)` liefert eine Zufallszahl zwischen 1 und 42. Denk aber daran, dass eine Zahl zur einmal gezogen werden kann
+> - Erstelle eine einfache Benutzereingabe für die Abgabe der 6 Tipps
+> - Führe nun deine Funktion solange aus, bis die sechs Zufallszahlen mit den eingegebenen Tipps übereinstimmen
+> - Zähle die Durchläufe
+
+## Zeit und Datum
+Zeit und Datum bilden eigene Datentypen, mit denen wir ganz spezifische Berechnungen anstellen können.  
+Dazu wird die Standardfunktionalität von Python mit dem Modul `time` erweitert.  
+
+***
+_Python enthält weitere Module für Datum und Zeit, wie `datetime` oder `calendar`. Für uns reicht aber vorerst `time`.
+***
+
+### The Epoch
+Berechnungen mit Zeit und Datum können sehr kompliziert sein. In vielen Programmiersprachen hat man sich deshalb darauf geeinigt, einen Zeitpunkt anhand der verstrichenen Sekunden seit dem 1. Januar 1970 (**since the Epoch**) anzugeben.  
+Auf diese Weise lassen sich verschiedene Zeiten und Zeitdifferenzen am einfachsten berechnen.  
+
+### Zeit Tupel
 In Python gibt es zudem das Zeit-Tupel, das immer aus den folgenden neun Elementen besteht:
-•	die ersten drei Elemente (0 bis 2) liefern Jahr, Monat und Tag
-•	die nächsten drei Elemente (3 bis 5) liefern Stunde, Minute und Sekunde
-•	das nächste Element (6) stellt den Wochentag von 0 bis 6 bereit.
-•	die laufende Nummer des Tages innerhalb eines Jahres wird von Element 7 geliefert.
-•	Informationen über den Status der Sommerzeit liefert das letzte Element 8.
-Wenn wir die Konvertierung zwischen Zeit-Tupel und Sekunden seit 1970 beherrschen, können wir umfangreiche Zeitberechnungen vornehmen.
+- die ersten drei Elemente (0 bis 2) liefern Jahr, Monat und Tag
+- die nächsten drei Elemente (3 bis 5) liefern Stunde, Minute und Sekunde
+- das nächste Element (6) stellt den Wochentag von 0 bis 6 bereit.
+- die laufende Nummer des Tages innerhalb eines Jahres wird von Element 7 geliefert.
+- Informationen über den Status der Sommerzeit liefert das letzte Element 8.
+
+Wenn wir die Konvertierung zwischen Zeit-Tupel und Sekunden seit 1970 beherrschen, können wir umfangreiche Zeitberechnungen vornehmen.  
+Dank spezieller Funktionen können wir Zeiten auch von und nach Text konvertieren.
+
+```python
 import time
 
 # Aktuelle Zeit in Sekunden seit 'the Epoch'
 print(time.time())
 
-# Aktuelle Zeit als Zeit-Tupel, und einzelne Elemente daraus
+# Aktuelle Zeit als Tupel, und einzelne Elemente daraus
 print(time.localtime())
 print(time.localtime().tm_mon)  # Monat
 print(time.localtime().tm_mday)  # Tag
@@ -444,27 +528,47 @@ print(time.mktime((2016, 4, 29, 0, 0, 0, 4, 120, -1)))
 
 # Umwandlung von Text in Sekunden seit 'the Epoch'
 print(time.mktime(time.strptime("29.04.2016", "%d.%m.%Y")))
-•	In der Funktion strptime() werden für das Datumsformat Platzhalter verwendet.
-•	Auch für die individuelle Ausgabe am Bildschirm können diese Platzhalter zusammen mit der Funktion strftime() eingesetzt werden.
-•	Aus einem Zeit-Tupel können wir ein bestimmtes Element über den Index oder über das Schlüsselwort ansprechen. 
-•	Ausführliche Übersicht: https://docs.python.org/2/library/time.html#module-time
-Übung: Geburtstag
-Schreibe dazu ein Programm mit interaktiver Benutzereingabe, das folgende Fragen beantwortet:
-•	An welchem Wochentag wurdest du geboren?
-•	An welchem Wochentag feierst du deinen 30. Geburtstag?
-Web
-Im Internet finden sich unendlich viele Daten und Dienste, die wir downloaden oder anzapfen können, um eine bestimmte Anforderung zu lösen.
-In der GIS-Welt müssen z.B. häufig Koordinaten von einem System in ein anderes umgerechnet werden. Den Algorithmus zur Transformation müssen wir nicht selber entwickeln, sondern können dazu einen Dienst im Internet nutzen.
+```
+
+In der Funktion `strptime()` werden für das Datumsformat Platzhalter verwendet.  
+Auch für die individuelle Ausgabe am Bildschirm können diese Platzhalter zusammen mit der Funktion `strftime()` eingesetzt werden.  
+Aus einem Zeit-Tupel können wir ein bestimmtes Element über den Index oder über das Schlüsselwort ansprechen.   
+
+Ausführliche Übersicht: https://docs.python.org/3/library/time.html
+
+> **Übung: Geburtstag**  
+>
+> Schreibe das Programm `geburtstag.py` mit interaktiver Benutzereingabe, das folgende Fragen beantwortet:
+> - An welchem Wochentag wurdest du geboren?
+> - An welchem Wochentag feierst du deinen 30. Geburtstag?
+
+## Web
+Im Internet finden sich unendlich viele Daten und Dienste, die wir downloaden oder anzapfen können, um eine bestimmte Anforderung zu lösen.  
+
+In der GIS-Welt müssen z.B. häufig Koordinaten von einem System in ein anderes umgerechnet werden. Den Algorithmus zur Transformation müssen wir nicht selber entwickeln, sondern können dazu einen Dienst im Internet nutzen.  
+
 Die swisstopo stellt z.B. einen Dienst (Service) zur Verfügung, mit dem solche Koordinatentransformationen vorgenommen werden können.
-https://www.swisstopo.admin.ch/de/karten-daten-online/calculation-services/m2m.html
-Auf der Webseite heisst es sinngemäss, dass wir über eine bestimmte URL mit der Übergabe der Parameter easting und northig die umgerechneten Koordinaten erhalten.
-Anhand des aufgeführten Beispiels wissen wir, dass unsere URL so aussehen muss:
-https://geodesy.geo.admin.ch/reframe/wgs84tolv03?easting=7.452&northing=46.928&format=json
+
+https://www.swisstopo.admin.ch/de/karten-daten-online/calculation-services/m2m.html  
+
+Auf der Webseite heisst es sinngemäss, dass wir über eine bestimmte URL mit der Übergabe der Parameter `easting` und `northig` die umgerechneten Koordinaten erhalten.  
+
+Anhand des aufgeführten Beispiels wissen wir, dass unsere URL so aussehen muss:  
+
+https://geodesy.geo.admin.ch/reframe/wgs84tolv03?easting=7.452&northing=46.928&format=json  
+
 Im Browserfenster sehen wir nun das Resultat
-{"easting": "601017.990423179", "northing": "197433.9052806796"}
-Nun gilt es das, was wir im Internetbrowser können, mit Python nachzustellen. Wir basteln dafür Schritt für Schritt unsere URL mit den Parametern zusammen. Für die Koordinaten werden Variablen verwendet.
-Für die Kommunikation mit dem Internet ist das Modul requests bestens geeignet, muss aber zuerst installiert werden.
-Mit Modul requests 
+`{"easting": "601017.990423179", "northing": "197433.9052806796"}`
+
+Nun gilt es das, was wir im Internetbrowser können, mit Python nachzustellen. Wir basteln dafür Schritt für Schritt unsere URL mit den Parametern zusammen. 
+Für die Koordinaten werden Variablen verwendet.
+
+***
+_Für die Kommunikation mit dem Internet ist das Modul `requests` bestens geeignet.  
+Dieses ist nicht im Standardpaket von Python enthalten und muss zuerst installiert werden._
+***
+
+```python
 import requests
 
 e = 2600000
@@ -481,139 +585,222 @@ parameter = {"easting": e,
              "northing": n,
              "format": "json"}
 
-response = requests.get(url=service, params=parameter, proxies=proxy_dict, verify=False)  # die Parameter proxies und verify sind nur innerhalb des Bundesnetzes nötig
+response = requests.get(url=service, params=parameter, proxies=proxy_dict,
+                        verify=False)  # die Parameter proxies und verify sind nur innerhalb des Bundesnetzes nötig
 result = response.json()
 
 print(result["easting"])
 print(result["northing"])
+```
 
-Übung: Webdienste Geodäsie
-Das Gebäude von swisstopo hat die WGS84-Koordinaten 46.928°N 7.452°E. Unser Schulungsgebäude liegt bei der LV03-Koordinate 600050m 198760m. Wie weit sind die beiden Gebäude (Luftlinie) voneinander entfernt?
+> **Übung: Koordinatentransformation** 
+>
+> Das Gebäude von swisstopo hat die WGS84-Koordinaten 46.928°N 7.452°E. Unser Schulungsgebäude liegt bei der LV03-Koordinate 600050m 198760m.  
+> - Wie weit sind die beiden Gebäude (Luftlinie) voneinander entfernt?
+> 
+> _Tipps:_
+> - gehe schrittweise vor
+> - programmiere zuerst die Transformation
+> - berechne danach die Distanz (Pythagoras)
 
-Übung: Webdienste BGDI
-Studiere die Dokumentation zu den Webdiensten der Bundes-Geodateninfrastruktur.
-https://api3.geo.admin.ch/services/sdiservices.html#search 
-Versuche zu einer beliebigen Adresse die Koordinaten zu erhalten.
-https://api3.geo.admin.ch/rest/services/api/SearchServer?searchText=wabern&type=locations
-Grafische Benutzeroberflächen
-Wer bis hierhin durchgehalten und die vermittelten Inhalte mehr oder weniger begriffen hat, versteht nun die Grundlagen des Programmierens. In diesem Kapitel geht es nun darum, den möglicherweise komplizierten Programmiercode hinter einer schönen Fassade (GUI = Graphical User interface) zu verbergen.
-Zu Mensch-Maschinen-Interaktionen bestehen zahlreiche Philosophien, Konzepte, Frameworks (vorgefertigte Programmiermuster) etc., die von technischer Umsetzung über farbliche Gestaltung bis Ergonomie reichen. Da wir hier in einem Programmier- und nicht in einem Designerkurs sind, werden wir uns eher in der Region der technischen Umsetzung bewegen. Eine ansprechende grafische Gestaltung kann danach immer noch erfolgen.
-Das Hauptfenster
-In diesem Kurs nutzen wird das Modul tkinter, das bei jeder Pythoninstallation bereits standardmässig installiert ist. Mit ein paar wenigen Zeilen Code steht dann auch schon das Grundgerüst für unser Programm.
-Hauptfenster 
+> **Übung: Webdienste BGDI**  
+> 
+> 1. Studiere die Dokumentation zu den Webdiensten der Bundes-Geodateninfrastruktur.  
+> https://api3.geo.admin.ch/services/sdiservices.html#search  
+> 2. Versuche zu einer beliebigen Adresse die Koordinaten zu erhalten.  
+> https://api3.geo.admin.ch/rest/services/api/SearchServer?searchText=wabern&type=locations
+
+## Grafische Benutzeroberflächen
+Wer bis hierhin durchgehalten und die vermittelten Inhalte mehr oder weniger begriffen hat, versteht nun die Grundlagen des Programmierens.  
+In diesem Kapitel geht es nun darum, den möglicherweise komplizierten Programmiercode hinter einer schönen Fassade (**GUI** = Graphical User interface) zu verbergen.
+
+***
+_Zu Mensch-Maschinen-Interaktionen bestehen zahlreiche Philosophien, Konzepte, **Frameworks** (vorgefertigte Programmiermuster) etc., die von technischer Umsetzung über farbliche Gestaltung bis Ergonomie reichen._  
+_Da wir hier in einem Programmier- und nicht in einem Designerkurs sind, werden wir uns eher in der Region der technischen Umsetzung bewegen. Eine ansprechende grafische Gestaltung kann danach immer noch erfolgen._
+***
+
+### Das Hauptfenster
+In diesem Kurs nutzen wird das Modul `tkinter`, das bei jeder Pythoninstallation bereits standardmässig installiert ist.  
+Mit ein paar wenigen Zeilen Code steht dann auch schon das Grundgerüst für unser Programm.
+
+```python
 # -*- coding: utf-8 -*-
 
+# Modul importieren
 from tkinter import *
 
+# Bauplan definieren
 class Gui:
 
     def __init__(self):
-
+ 
         # Hauptfenster
-        self.window = Tk()
+        window = Tk()
 
         # Titel
-        self.window.title("GUI")
+        window.title("GUI")
 
         # Fenster darstellen
-        self.window.mainloop()
+        window.mainloop()
+
 
 # Programm ausführen
 Gui()
-Lasst euch durch die ominösen class-Definitionen und dieses self nicht beirren. Wir werden später sehen, wofür das gut sein kann. So viel sei verraten, wir begeben uns jetzt allmählich in die Tiefen der Objektorientierten Programmierung.
+```
+
+Lasst euch durch die ominöse `class`-Definition, das `__init__` und dieses `self` nicht beirren. Wir werden später sehen, wofür das gut sein kann.  
+So viel sei verraten, wir begeben uns jetzt allmählich in die Tiefen der Objektorientierten Programmierung.
  
-Widgets
-Ins Hauptfenster können nun verschiedene so genannte Widgets (Buttons, Labels, Eingabefelder, Checkboxes etc.) gepackt werden.
-Widgets 
+### Widgets
+Ins Hauptfenster können nun verschiedene so genannte **Widgets** (Buttons, Labels, Eingabefelder, Checkboxes etc.) gepackt werden.
+```python
 # -*- coding: utf-8 -*-
 
 from tkinter import *
+
 
 class Widgets:
 
     def __init__(self):
 
         # Hauptfenster
-        self.window = Tk()
+        window = Tk()
 
         # Titel
-        self.window.title("Meine Widgets")
+        window.title("Meine Widgets")
 
         # Label
-        self.label = Label(master=self.window, width=50, text="Ich bin ein Label")
-        self.label.pack(padx=10, pady=10)
+        label = Label(master=window, width=50, text="Ich bin ein Label")
+        label.pack(padx=10, pady=10)
 
         # Eingabe
-        self.eingabe = Entry(master=self.window, width=30)
-        self.eingabe.pack(padx=10, pady=10)
+        eingabe = Entry(master=window, width=30)
+        eingabe.pack(padx=10, pady=10)
 
         # Button
-        self.button = Button(master=self.window, width=10, text="Klick me!")
-        self.button.pack(padx=10, pady=10)
+        button = Button(master=window, width=10, text="Klick me!")
+        button.pack(padx=10, pady=10)
 
         # Fenster fixieren
-        self.window.resizable(width=False, height=False)
+        window.resizable(width=False, height=False)
 
         # Fenster darstellen
-        self.window.mainloop()
+        window.mainloop()
+
 
 # Programm ausführen
 Widgets()
+```
+![widgets](screenshots/widgets.PNG)
+
+***
+_Im Beispiel oben haben wir die Widgets einfach nacheinander ins Hauptfenster gepackt (oder zuerst in ein `frame` verschachtelt), dabei die Abstände zu umliegenden Widget angegeben (`padx`, `pady`) und die Ausrichtung über `side` gesteuert._ 
+_Zudem haben wir die Grösse des Fensters fixiert._  
+
+_Für einfache Anwendungen ist das ausreichend, doch sobald mehr Widgets in einem Fenster enthalten sind, stösst dieses dynamische Packing schnell an seine Grenzen._  
+
+_Komplexere Layouts sind mit dem `grid`-Pattern möglich, wir beschränken uns aber vorerst auf `pack`._
+***
+
+> **Übung: Sehtest**  
+> `sehtest.py`
+>
+> 1. Erstelle anhand des Beispiels oben das Gerüst für dein Hauptfenster
+> 2. Packe hintereinander vier Label-Widgets mit absteigender Schriftgrösse (z.B. 100, 80, 60, 40) hinein
+> 3. Setzte als Text für jedes der vier Labels drei zufällige Grossbuchstaben
+>
+> _Tipp:_  
+> Das ganze Alphabet als Liste erhälst du z.B. so:  
+> `abc = string.ascii_uppercase`
+>
+> _Beispiel:_  
+> ![sehtest](screenshots/visual.PNG)
  
-Layout
-Im Beispiel oben haben wir die Widgets einfach nacheinander ins Hauptfenster gepackt (oder zuerst in ein Frame verschachtelt), dabei die Abstände zum vorherigen und nachfolgenden Widget angegeben und die Ausrichtung über side gesteuert. Zudem haben wir die Grösse des Fensters fixiert. Für einfache Anwendungen ist das ausreichend, doch sobald mehr Widgets in einem Fenster enthalten sind, stösst dieses dynamische Packing schnell an seine Grenzen. Komplexere Layouts sind mit dem grid-Pattern möglich.
-Übung: Sehtest
-•	Erstelle anhand des Beispiels oben das Gerüst für dein Hauptfenster
-•	Packe hintereinander vier Label-Widgets mit absteigender Schriftgrösse (z.B. 100, 80, 60, 40) hinein
-•	Setzte als Text für jedes der vier Labels drei zufällige Grossbuchstaben
- Das ganze Alphabet als Liste erhälst du z.B. so:
-import string
-abc = string.ascii_uppercase
- 
-Form vs. Funktionalität
-Widgets dienen der Benutzerinteraktion. Wir müssen also lernen, wie wir den Zustand und/oder die Eigenschaften eines Widgets je nach Interaktion abgreifen und/oder manipulieren können. Wir beginnen also damit, Darstellung und Funktionalität zu kombinieren. Um die Übersicht zu behalten versuchen wir aber, im Code die Teile für Form von den Teilen für Funktion zu trennen.
-Wie ganz zu Beginn einmal kurz erwähnt, ist eine Klasse (class) ein Bauplan, hier der Bauplan für unser Programm mit graphischer Benutzeroberfläche. Die erste Methode in einer Klasse heisst immer __init__. Dies ist der so genannte Kontruktor, der die allerwichtigsten Angaben des Bauplans erhält. Wenn eine neue Klasse initiiert wird (d.h. gemäss Bauplan ein neues Objekt erstellt wird), wird __init__ immer automatisch ausgeführt.
-Für Programme mit GUI ist dies ziemlich praktisch, da einfach alles, was für die Darstellung (Hauptfenster, Widgets) nötig ist, in der __init__-Methode untergebracht werden kann, und die eigentliche Programmlogik in separate Methoden ausgelagert werden kann.
-Form vs. Function 
+## Form vs. Funktionalität
+Widgets dienen hauptsächlich der Benutzerinteraktion. Wir müssen also lernen, wie wir den Zustand und/oder die Eigenschaften eines Widgets je nach Interaktion abgreifen und/oder manipulieren können.  
+
+Wir beginnen also damit, Darstellung und Funktionalität zu kombinieren. 
+Um die Übersicht zu behalten versuchen wir, im Code die Teile für Form von den Teilen für Funktionalität zu trennen.  
+
+### Objektorientierte Programmierung
+Wie schon erwähnt, ist eine Klasse (`class`) ein Bauplan, hier der Bauplan für unser Programm mit GUI.  
+Die erste Methode in einer Klasse heisst immer `__init__`. Dies ist der so genannte **Kontruktor**, der die allerwichtigsten Angaben des Bauplans erhält.  
+
+Wenn eine neue Klasse initiiert wird (d.h. gemäss Bauplan ein neues Objekt erstellt wird), wird `__init__` immer automatisch ausgeführt.  
+
+Für Programme mit GUI ist dies ziemlich praktisch, da einfach alles, was für die Darstellung (Hauptfenster, Widgets) nötig ist, in der `__init__`-Methode untergebracht werden kann, und die eigentliche Programmlogik in separate Methoden ausgelagert werden kann.
+```python
 # -*- coding: utf-8 -*-
 
 import random
 from tkinter import *
 
 
-class FormVsFunction:
+class FormVsFunctionality:
 
     def __init__(self):
         """ Hier steht nur Form.
         """
-
         window = Tk()
-        window.title("Form vs. Funktion")
+        window.title("Form vs. Funktionalität")
 
-        Button(master=window, text="Random", command=self.random).pack(padx=5, pady=5)
+        Button(master=window, text="Random", command=self.get_random_int).pack(padx=5, pady=5)
         self.label = Label(master=window, width=40)
         self.label.pack(padx=5, pady=5)
 
         window.mainloop()
 
-    def random(self):
-		"""Hier steht Funktionalität.
-		"""
+    def get_random_int(self):
+        """Hier steht Funktionalität.
+        """
         self.label.config(text=str(random.randint(1, 100)))
 
 
-FormVsFunction()
-Im Widget Button in der Funktion __init__ ist unter dem Parameter command hinterlegt, welche Funktion beim Klicken ausgeführt werden soll. Damit aber aus __init__ heraus die Funktion random überhaupt angesprochen werden kann, ist das Schlüsselwort self notwendig.  self ist also sozusagen der Bezug auf die übergeordnete class.
-Übung: Sehtest mit refresh
-•	Erweitere deinen Sehtest durch einen Button, bei dessen Betätigung neue Zufallsbuchstaben angezeigt werden.
-•	Versuche Darstellung (in der Funktion __init__) und Logik (z.B. in der Funktion refresh) zu trennen
-Übung: Lichtschalter
-Programmiere eine kleine Applikation, die einen Lichtschalter simuliert, indem nach Betätigung eines Buttons z.B. Hintergrundfarbe oder Text hin- und her wechseln. Das könnte dann ungefähr so aussehen.
-  
-Events
-Ein Event wird durch den Benutzer ausgelöst, wenn er z.B. mit der Maus einen Button klickt, eine bestimmte Tastenkombination drückt o.ä.
-Die einfachste Form solcher Events haben wir bereits kennengelernt, nämlich den Parameter command bei den Buttons. Events können aber noch viel mehr. Ein Event weiss z.B. von sich selbst, auf welchem Widget, zu welcher Zeit und über welches Eingabegerät (Taste, Tastenkombination, Links- oder Rechtsklick) er ausgelöst wurde. Je nach dem kann das Programm darauf reagieren und eine entsprechende Aktion ausführen.
-Maus-Events 
+FormVsFunctionality()
+```
+
+Im Widget _Button_  ist unter dem Parameter `command` hinterlegt, welche **Methode** beim Klicken ausgeführt werden soll.   
+
+Der Button ist im Konstruktor `__init__` definiert, die auszuführende Methode heisst `get_random_int`. 
+Beide Methoden stehen innerhalb der Klasse `FormVsFunctionality` auf derselben Hierarchiestufe (gleiche Einrückung).
+
+Damit nun diese beiden Methoden miteinander kommunizieren können, müssen sie das via das gemeinsame übergeordnete Objekt machen. Also quasi _über die Linie_.  
+Das gemeinsame übergeordnete Objekt kann ganz einfach immer mit dem Schlüsselwort `self` angesprochen werden.  
+
+Im Beispiel oben haben deshalb alle Elemente, die auch aus anderen Methoden angesprochen werden müssen, das Präfix `self`.
+
+***
+_Fieser kleiner Unterschied zwischen Funktion und Methode: Innerhalb einer Klasse spricht man von Methode, ausserhalb von Funktion._  
+_Es ist aber niemand böse, wenn diese Begriffe gleichwertig verwendet werden._
+***
+
+> **Übung: Sehtest mit refresh**  
+> `sehtest_refresh.py`
+> 
+> 1. Kopiere dein Skript `sehtest.py` und speichere es unter `sehtest_refresh.py`.
+> 2. Erweitere das neue Skript nun durch einen Button, bei dessen Betätigung neue Zufallsbuchstaben angezeigt werden.
+> 3. Versuche Darstellung (im Konstruktor `__init__`) und Logik (z.B. in der Methode `refresh`) zu trennen
+
+> **Übung: Lichtschalter**  
+> `lichtschalter.py`
+> 
+> Programmiere eine kleine Applikation, die einen Lichtschalter simuliert, indem nach Betätigung eines Buttons z.B. Hintergrundfarbe oder Text hin- und her wechseln.   
+>Das könnte dann ungefähr so aussehen.
+> ![off](screenshots/light_off.PNG) 
+>
+> ![on](screenshots/light_on.PNG)
+
+## Events
+Ein Event wird üblicherweise durch den Benutzer ausgelöst, wenn er z.B. mit der Maus einen Button klickt, eine bestimmte Tastenkombination drückt o.ä.  
+
+Die einfachste Form solcher Events haben wir bereits kennengelernt, nämlich den Parameter `command` bei den Buttons.  
+
+Events können aber noch viel mehr. Ein Event weiss z.B. von sich selbst, auf welchem Widget, zu welcher Zeit und über welches Eingabegerät (Taste, Tastenkombination, Links- oder Rechtsklick) er ausgelöst wurde.  
+
+Je nach dem kann das Programm darauf reagieren und eine entsprechende Aktion ausführen.
+
+### Sequenzen 
+```python
 # -*- coding: utf-8 -*-
 
 from tkinter import *
@@ -622,16 +809,16 @@ from tkinter import *
 class Events:
 
     def __init__(self):
-        self.window = Tk()
-        self.window.title("Events")
+        window = Tk()
+        window.title("Events")
 
-        self.label = Label(master=self.window, text="Click me!", width=25)
-        self.label.pack(pady=20, padx=20)
+        label = Label(master=window, text="Click me!", width=25)
+        label.pack(pady=20, padx=20)
 
-        self.label.bind(sequence="<Button-1>", func=self.leftclick)
-        self.label.bind(sequence="<Button-3>", func=self.rightclick)
+        label.bind(sequence="<Button-1>", func=self.leftclick)
+        label.bind(sequence="<Button-3>", func=self.rightclick)
 
-        self.window.mainloop()
+        window.mainloop()
 
     def rightclick(self, event):
         event.widget.config(text="Rechts")
@@ -641,10 +828,20 @@ class Events:
 
 
 Events()
-Mit bind wird ein spezifischer Eventtyp an ein Widget gebunden, und mit func angegeben, welche Funktion dann ausgeführt werden soll. Der Funktion wird dann der Event event mit allen Informationen darüber als Parameter übergeben. Mit event.widget ist dann innerhalb dieser Funktion das Widget bekannt, auf dem der Event ausgelöst wurde, und die config dieses Widgets (hier der Parameter text) kann manipuliert werden.
-Kontrollvariablen
-Über Kontrollvariablen können bestimmte Aktionen ausgelöst werden, ohne dass der Benutzer aktiv einen Event auslösen muss. Verschiedene kompatible Widgets werden dazu über eine gemeinsame Kontrollvariable verknüpft und aktualisieren sich dynamisch gegenseitig.
-Kontrollvariablen 
+```
+
+Mit `bind` wird festgelegt, auf welche Eingabe (`sequence`) ein Widget überhaupt reagieren soll. Sobald diese Eingabe erfolgt (im Beispiel oben ein Mausklick), wird die unter `func` angegebene Methode aufgerufen.  
+Der Methode wird dann der ganze Event `event` mit all seinen Informationen als Parameter übergeben.   
+
+Der Parameter `event` kann dann innerhalb der aufgerufenen Methode ausgewertet werden. Unter `event.widget` findet sich z.B. das Widget, auf dem der Event ausgelöst wurde. 
+Nun kann die `config` dieses Widgets (hier der Parameter `text`) direkt manipuliert werden.
+
+### Kontrollvariablen
+Über Kontrollvariablen können bestimmte Aktionen ausgelöst werden, **ohne** dass der Benutzer aktiv einen Event auslösen muss.  
+
+Verschiedene kompatible Widgets werden dazu über eine gemeinsame **Kontrollvariable** verknüpft und aktualisieren sich dynamisch gegenseitig.
+
+```python
 # -*- coding: utf-8 -*-
 
 from tkinter import *
@@ -653,39 +850,44 @@ from tkinter import *
 class Controlvars:
 
     def __init__(self):
-
         # Hauptfenster
-        self.window = Tk()
-        self.window.title("Kontrollvariablen")
+        window = Tk()
+        window.title("Kontrollvariablen")
 
         # Dynamische Variable im Hauptfenster registrieren
-        self.dynamischer_text = StringVar()
+        dynamischer_text = StringVar()
 
         # Zwei Labels erstellen, deren Texte sich auf die dynamische Veriable beziehen
-        self.label1 = Label(master=self.window, width=20, textvariable=self.dynamischer_text)
-        self.label1.pack()
+        label1 = Label(master=window, width=20, textvariable=dynamischer_text)
+        label1.pack()
 
-        self.label2 = Label(master=self.window, width=20, textvariable=self.dynamischer_text)
-        self.label2.pack()
+        label2 = Label(master=window, width=20, textvariable=dynamischer_text)
+        label2.pack()
 
         # Ein Eingabefeld erstellen, das den dynamischen Text ändert
-        self.eingabe = Entry(master=self.window, width=50, textvariable=self.dynamischer_text)
-        self.eingabe.pack(pady=10, padx=10)
+        eingabe = Entry(master=window, width=50, textvariable=dynamischer_text)
+        eingabe.pack(pady=10, padx=10)
 
         # Hauptfenster anzeigen
-        self.window.mainloop()
+        window.mainloop()
 
 
 # Programm ausführen
 Controlvars()
-Messageboxes
-Messageboxes sind kleine vordefinierte Fensterchen, die dem Benutzer ein Feedback auf seine getätigten Aktionen geben, und gegebenenfalls eine neue Aktion auslösen.
+```
+
+## Messageboxes
+Messageboxes sind kleine vordefinierte Fensterchen, die dem Benutzer ein Feedback auf seine getätigten Aktionen geben, und gegebenenfalls eine neue Aktion auslösen.  
+
 Es werden drei Arten unterschieden:
-•	showinfo: Enthält einen Titel, eine Message und den Button OK
-•	askyesno: Enthält einen Titel, eine Message und die Buttons Ja und Nein
-•	askretrycancel: Enthält einen Titel, eine Message und die Buttons Wiederholen und Abbrechen
-askyesno und askretrycancel liefern einen Boolean zurück, der je nach geklicktem Button True oder False enthält. Im Programm können wir nun entsprechend darauf reagieren.
-Messagebox 
+- `showinfo`: Enthält einen Titel, eine Message und den Button OK
+- `askyesno`: Enthält einen Titel, eine Message und die Buttons Ja und Nein
+- `askretrycancel`: Enthält einen Titel, eine Message und die Buttons Wiederholen und Abbrechen
+
+`askyesno` und `askretrycancel` liefern einen Boolean zurück, der je nach geklicktem Button `True` oder `False` enthält.  
+Im Programm können wir nun entsprechend darauf reagieren.
+
+```python
 import tkinter.messagebox
 from tkinter import *
 
@@ -724,8 +926,7 @@ class Messages:
 
 
 Messages()
-
-  
+```
 
 
 
