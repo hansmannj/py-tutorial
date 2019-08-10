@@ -71,12 +71,23 @@ Mit Zahlen können wir rechnen, sie runden oder eine Fliesskommazahl in eine Gan
 ```python
 2 * 3 + 4 - (5 / 6)
 2 * (3 + 4) - 5 / 6
+2 ** 2  # Potenz
 5 / 3  # Dezimaldivision
 5 // 3  # Ganzzahldivision
 5 % 3  # Modulo, liefert den Rest einer Division
 int(3.414)  # Fliesskommazahl anch Integer casten
-
 ```
+***
+_Divisionen werden in Python 2 anders berechnet als in Python 3_:  
+
+`/` _ist immer eine Ganzzahldivision, ausser es ist ausdrücklich eine Fliesskommazahl beteiligt_  
+`//` gibt es gar nicht  
+
+Beispiel:  
+`5 / 2 = 2`  
+`5 / 2.0 = 2.5`  
+***
+
 #### Textoperatoren
 Texte (immer mit Hochkommata gekennzeichnet) können wir zusammenfügen (_concatenate_), in Grossbuchstaben umwandeln, Buchstaben austauschen oder einen Auszug (_substring_) davon anzeigen u.v.m.
  
@@ -413,7 +424,7 @@ _In die allererste Zeile des Scripts exakt folgende Zeile einfügen:_
 > 
 > 1. Erzeuge eine neue Textdatei mit dem Namen `personen.txt`.
 > 2. Schreibe einige Personen in die Liste im Format _Vorname_ _Nachname_.
-> 4. Versuche zuerst, die Namen aus der Datei `personen.txt` zu laden und die Vornamen auf dem Bildschirm zu zeigen
+> 4. Versuche zuerst, die Namen aus der Datei `personen.txt` zu laden und nur die Vornamen auf dem Bildschirm zu zeigen
 > 5. Wenn das klappt, schreibe die Vornamen in alphabetischer Reihenfolge in die Datei `vornamen_alphabetisch.txt` zu schreiben.
 > 
 > _Tipps:_
@@ -499,7 +510,7 @@ _Obiges Beispielskript zu den Primzahlen liefert zwar korrekte Resultate, ist ab
 > - Definiere eine Funktion, die eine Lottoziehung (6 aus 42) simulieren kann
 > - `random.randint(1, 42)` liefert eine Zufallszahl zwischen 1 und 42.
 > - Denk daran, dass eine Zahl zur einmal gezogen werden kann. Erinnerst du dich an `set()`
-> - Erstelle eine einfache Benutzereingabe für die Abgabe der 6 Tipps
+> - Erstelle eine einfache Benutzereingabe für die Abgabe der 6 Tipps. Alternativ kannst du die Tippabgabe auch duch den Zufallsgenerator simulieren
 > - Führe deine Funktion in einer `while`-Schleife solange aus, bis die sechs Zufallszahlen mit den eingegebenen Tipps übereinstimmen
 > - Zähle die Durchläufe
 
@@ -618,6 +629,7 @@ print(result["northing"])
 >
 > Das Gebäude von swisstopo hat die WGS84-Koordinaten 46.928°N 7.452°E. Unser Schulungsgebäude liegt bei der LV03-Koordinate 600050m 198760m.  
 > - Wie weit sind die beiden Gebäude (Luftlinie) voneinander entfernt?
+> - Runde das Resultat auf 10m genau
 > 
 > _Tipps:_
 > - gehe schrittweise vor
