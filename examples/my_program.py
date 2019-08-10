@@ -11,7 +11,7 @@ class Programm:
     def __init__(self):
         # GUI aufbauen
 
-        self.color_list = ["red", "blue", "pink", "green"]
+        self.color_list = ["red", "blue", "pink", "green", "lime"]
 
         self.fenster = Tk()
         self.fenster.title("Mein Programm")

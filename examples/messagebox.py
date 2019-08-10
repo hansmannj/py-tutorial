@@ -19,19 +19,20 @@ class Messages:
 
         self.window.mainloop()
 
-    @staticmethod
-    def info():
-        tkinter.messagebox.showinfo("Infobox", "Ich bin eine Infobox")
+    def info(self, message="Ich bin eine Infobox"):
+        tkinter.messagebox.showinfo("Info", message)
 
-    @staticmethod
-    def yesno():
-        result = tkinter.messagebox.askyesno("Ja - Nein", "Alles paletti?")
-        print(result)
+    def yesno(self, message="Alles paletti?"):
+        result = tkinter.messagebox.askyesno("Ja - Nein", message)
+        if result:
+            self.info(message="Das freut micht!")
+        else:
+            self.info(message="Das ist aber schade")
 
-    @staticmethod
-    def retry():
-        result = tkinter.messagebox.askretrycancel("Nochmals", "Nochmals versuchen?")
-        print(result)
+    def retry(self, message="Nochmals versuchen?"):
+        result = tkinter.messagebox.askretrycancel("Nochmals", message)
+        if result:
+            self.yesno(message="Besser jetzt?")
 
 
 Messages()

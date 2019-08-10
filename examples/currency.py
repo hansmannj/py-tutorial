@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 
-import json
 from tkinter import *
 
-import urllib2
+import requests
 
 
 class Change:
@@ -15,16 +14,17 @@ class Change:
 
         # textvariables
         self.chf = DoubleVar()
+        self.chf.set(1)  # default
         self.currency = StringVar()
         self.output = StringVar()
 
         # widgets
         Label(master=self.window, text="Bitte Betrag in CHF eingeben", width=40).pack(pady=5)
         Entry(master=self.window, textvariable=self.chf).pack(padx=5)
-        eur_button = Radiobutton(master=self.window, text="Euro", value="EUR", variable=self.currency)
+        eur_button = Radiobutton(master=self.window, text="Euro", value="CHF_EUR", variable=self.currency)
         eur_button.pack()
         eur_button.select()  # Euro ist schon angewählt bei start.
-        usd_button = Radiobutton(master=self.window, text="US-Dollar", value="USD", variable=self.currency)
+        usd_button = Radiobutton(master=self.window, text="US-Dollar", value="CHF_USD", variable=self.currency)
         usd_button.pack()
 
         self.button = Button(master=self.window, text="Berechnen", command=self.calculate)
@@ -34,10 +34,11 @@ class Change:
         # Get current rates
         try:
             self.rates = self.get_rates()
-        except:
+            self.output.set("Aktuelle Kurse wurden geladen")
+        except Exception:
             self.output.set("Kurse konnten nicht geladen werden")
-            self.rates = {"EUR": 0.85977,
-                          "USD": 1.071}
+            self.rates = {"CHF_EUR": 0.85977,
+                          "CHF_USD": 1.071}
             # self.button.config(state="disabled")
 
         # Show window
@@ -48,15 +49,19 @@ class Change:
             chf = self.chf.get()
             currency = self.currency.get()
             result = str(chf * self.rates[currency])
-            self.output.set(result + " " + currency)
+            self.output.set("{} CHF = {} {}".format(chf, result, currency.split("_")[-1]))
         except Exception:
             self.output.set("Eingabe ungültig")
 
     @staticmethod
     def get_rates():
-        response = urllib2.urlopen("https://api.fixer.io/latest?base=CHF&symbols=USD,EUR")
-        result = json.load(response)
-        return result["rates"]
+        service = r"https://free.currconv.com/api/v7/convert"
+        params = {"apiKey": "93fc194dc99a31baa8d9",
+                  "q": "CHF_EUR,CHF_USD",
+                  "compact": "ultra"}
+
+        response = requests.get(service, params)
+        return response.json()
 
 
 change = Change()
