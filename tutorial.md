@@ -391,20 +391,23 @@ print(inhalt)
 - Die Funktion `readlines()` liefert eine Liste mit je einem Element pro Zeile
 - Der Zeilenumbruch wird als \n ebenfalls gelesen.
 ***
-_In einem String können Backslashes vor bestimmten Buchstaben eine besondere Bedeutung haben (`\n` für new line, `\t` für tabulator etc.). Wenn dies nicht gewünscht ist, kann ein kleines `r` direkt vor den String gesetzt werden. Dann ist ein Backslash einfach ein Backslash._
+_In einem String können **Backslashes** vor bestimmten Buchstaben eine besondere Bedeutung haben (`\n` für new line, `\t` für tabulator etc.). Wenn dies nicht gewünscht ist, kann ein kleines `r` direkt vor den String gesetzt werden. Dann ist ein Backslash einfach ein Backslash._
 ```python
 print("das ist ein \text")
 print(r"das ist ein \text")
 ```
-***
-## Sonderzeichen
-Sonderzeichen und Umlaute führen beim Programmieren immer wieder zu Problemen. In Variablennamen sind sie sogar verboten.  
-Am besten wäre es, ganz darauf zu verzichten, aber da wir als Programmierer nicht immer die Kontrolle darüber haben (Dateipfade oder -inhalte von Dritten), müssen wir einen Trick anwenden (der meistens, aber leider nicht immer) funktioniert:  
 
-In die allererste Zeile des Scripts exakt folgende Zeile einfügen:
+
+***
+_**Sonderzeichen und Umlaute** führen beim Programmieren immer wieder zu Problemen. In Variablennamen sind sie sogar verboten._  
+_Am besten wäre es, ganz darauf zu verzichten, aber da wir als Programmierer nicht immer die Kontrolle darüber haben (Dateipfade oder -inhalte von Dritten), müssen wir einen Trick anwenden (der meistens, aber leider nicht immer) funktioniert:_  
+
+_In die allererste Zeile des Scripts exakt folgende Zeile einfügen:_
 ```python
 # -*- coding: utf-8 -*-
 ```
+***
+
 > **Übung: Textfile lesen und schreiben**  
 > `namen.py`
 > 
