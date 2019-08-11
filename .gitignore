@@ -105,5 +105,16 @@ venv.bak/
 
 # py-tutorial
 /.idea/
-/solutions/
 /examples/
+/solutions/geburtstag.py
+/solutions/ide.py
+/solutions/summe.py
+/solutions/sehtest_refresh.py
+/solutions/kreis.py
+/solutions/namen.py
+/solutions/lotto.py
+/solutions/sehtest.py
+/solutions/lichtschalter.py
+/solutions/kreis_funktion.py
+/solutions/koordinaten.py
+/solutions/vornamen_alphabetisch.txt
