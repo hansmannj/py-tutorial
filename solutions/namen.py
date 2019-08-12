@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 # Dateipfad für bestehende Datei als Variable
-personen = r"C:\Pythonkurs\resources\personen.txt"
+personen = r"../resources/personen.txt"
 
 # Alle zeilen aus der Datei lesen und in der Variable 'namen' speichern
 with open(personen, "r") as r:
@@ -28,7 +28,7 @@ for name in namen:
 print(sorted(nachnamen))
 
 # Dateipfad für neue Datei als Variable
-nachnamen_abc = r"C:\Pythonkurs\resources\nachnamen_alphabetisch.txt"
+nachnamen_abc = r"nachnamen_alphabetisch.txt"
 with open(nachnamen_abc, "w") as w:  # Schreibzugriff öffnen
     for nachname in sorted(nachnamen):  # sortierter Loop
         w.write(nachname + "\n")  # Name und Umbruch in die Datei schreiben
