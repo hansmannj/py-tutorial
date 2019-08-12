@@ -107,7 +107,7 @@ venv.bak/
 /.idea/
 /solutions/geburtstag.py
 /solutions/ide.py
-/solutions/summe.py
+# /solutions/summe.py
 /solutions/sehtest_refresh.py
 /solutions/kreis.py
 /solutions/namen.py
