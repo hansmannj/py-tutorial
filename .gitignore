@@ -108,7 +108,7 @@ venv.bak/
 /examples/
 /solutions/geburtstag.py
 /solutions/ide.py
-/solutions/summe.py
+# /solutions/summe.py
 /solutions/sehtest_refresh.py
 /solutions/kreis.py
 /solutions/namen.py
@@ -118,4 +118,18 @@ venv.bak/
 /solutions/kreis_funktion.py
 /solutions/koordinaten.py
 /solutions/vornamen_alphabetisch.txt
-/resources/textdatei.txt
+/examples/benannte_parameter.py
+/examples/bombe.ico
+/examples/dateibrowser.py
+/examples/form_vs_functionality.py
+/examples/gui_samples.py
+/examples/kontrollvariablen.py
+/examples/kreis_gui.py
+/examples/login_gui.py
+/examples/masterpiece.py
+/examples/maus_events.py
+/examples/messages.py
+/examples/primzahlen.py
+/examples/random_program.py
+/examples/waehrungsrechner.py
+/examples/widgets.py
