@@ -111,7 +111,7 @@ venv.bak/
 # /solutions/summe.py
 /solutions/sehtest_refresh.py
 # /solutions/kreis.py
-/solutions/namen.py
+#/solutions/namen.py
 /solutions/lotto.py
 /solutions/sehtest.py
 /solutions/lichtschalter.py
