@@ -52,6 +52,7 @@ class Game:
         self.reset()
 
         # Hauptfenster fixieren und anzeigen
+        self.window.minsize(width=250, height=0)
         self.window.resizable(width=False, height=False)
         self.window.mainloop()
 
@@ -181,8 +182,8 @@ class Cell:
         self.game = game
 
         # Button erstellen und im Grid an entsprechender x,y Position anzeigen
-        button = Button(master=self.game.playground, width=2, height=1)
-        button.grid(column=x, row=y)
+        button = Label(master=self.game.playground, width=2, height=1, background="light gray")
+        button.grid(column=x, row=y, padx=1, pady=1)
 
         # Funktionen an den Button binden:
         # Linksklick: aufdecken
