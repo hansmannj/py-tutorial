@@ -112,25 +112,10 @@ venv.bak/
 /solutions/sehtest_refresh.py
 # /solutions/kreis.py
 #/solutions/namen.py
-/solutions/lotto.py
+#/solutions/lotto.py
 /solutions/sehtest.py
 /solutions/lichtschalter.py
 #/solutions/kreis_funktion.py
 /solutions/koordinaten.py
 /solutions/vornamen_alphabetisch.txt
-/examples/benannte_parameter.py
-/examples/bombe.ico
-/examples/dateibrowser.py
-/examples/form_vs_functionality.py
-/examples/gui_samples.py
-/examples/kontrollvariablen.py
-/examples/kreis_gui.py
-/examples/login_gui.py
-/examples/masterpiece.py
-/examples/maus_events.py
-/examples/messages.py
-/examples/primzahlen.py
-/examples/random_program.py
-/examples/waehrungsrechner.py
-/examples/widgets.py
 /solutions/nachnamen_alphabetisch.txt
