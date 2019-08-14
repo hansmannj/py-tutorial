@@ -29,5 +29,8 @@ azb_n = float(result["northing"])
 # Berechnung der Distanz mit Pythagoras
 distance = math.sqrt((lt_e - azb_e) ** 2 + (lt_n - azb_n) ** 2)
 
+# Alternative: Berechnung der Distanz mit math.hypot
+# distance = math.hypot(lt_e - azb_e, lt_n - azb_n)
+
 # Gerundete Ausgabe
 print(round(distance, -1))
