@@ -116,6 +116,6 @@ venv.bak/
 /solutions/sehtest.py
 /solutions/lichtschalter.py
 #/solutions/kreis_funktion.py
-/solutions/koordinaten.py
+# /solutions/koordinaten.py
 /solutions/vornamen_alphabetisch.txt
 /solutions/nachnamen_alphabetisch.txt
