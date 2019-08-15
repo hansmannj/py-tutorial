@@ -24,14 +24,14 @@ class Messages:
 
     def yesno(self, message="Alles paletti?"):
         result = tkinter.messagebox.askyesno("Ja - Nein", message)
-        if result:
+        if result == True:
             self.info(message="Das freut micht!")
         else:
             self.info(message="Das ist aber schade")
 
     def retry(self, message="Nochmals versuchen?"):
         result = tkinter.messagebox.askretrycancel("Nochmals", message)
-        if result:
+        if result:  # Kurzschreibweise für 'if result == True'
             self.yesno(message="Besser jetzt?")
 
 

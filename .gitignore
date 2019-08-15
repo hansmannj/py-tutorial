@@ -106,7 +106,7 @@ venv.bak/
 # py-tutorial
 /.idea/
 # /examples/
-/solutions/geburtstag.py
+#/solutions/geburtstag.py
 /solutions/ide.py
 # /solutions/summe.py
 /solutions/sehtest_refresh.py
