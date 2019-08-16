@@ -167,7 +167,7 @@ def rules():
 
 def about():
     tkinter.messagebox.showinfo("About",
-                                "Dieses Programm wurde im Rahmen des Kurses 'Python für Lernende swisstopo' 2018 "
+                                "Dieses Programm wurde im Rahmen des Kurses 'Python für Lernende swisstopo' 2019 "
                                 "entwickelt. Alle Rechte Vorbehalten. Viel Spass!")
 
 
@@ -200,25 +200,27 @@ class Cell:
     def explore(self, event):
 
         def popup(title, message):
+            # Messagebox wenn Spiel verloren. Neustart oder nochmals?
             if tkinter.messagebox.askyesno(title, message):
                 self.game.reset()
             else:
                 self.game.window.destroy()
 
         def reveal(color):
+            # alle Felder aufdecken und Bomben rot einfärben, wenn Spiel verloren wurde
             for col, row in self.game.bomb_list:
                 for widget in self.game.playground.grid_slaves(row, col):
                     widget.config(bg=color, text="X", state="disabled")
 
         # Da der Button weiss, an welcher Posision er sich befindet,
-        # kann er die Methode check aus der Klasse Field fragen, was sich genau
+        # kann er die Methode check aus der Klasse Game fragen, was sich genau
         # an seiner Position und in den umliegenden Feldern befindet.
 
         result = self.game.check(self.x, self.y)
 
         if result == "Bomb":
             # Falls eine Bombe getroffen wurde:
-            # - Alle Bomben rot einfärben und disablen, Game Over anzeigen
+            # - Alle Bomben rot einfärben und disablen (reveal), Game Over anzeigen
             # - Messagebox öffnen und Benutzer fragen, ob er ein neues Spiel
             #   starten oder das Programm beenden möchte
 
