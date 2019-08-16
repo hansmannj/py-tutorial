@@ -202,7 +202,7 @@ class Cell:
         def popup(title, message):
             # Messagebox wenn Spiel verloren. Neustart oder nochmals?
             if tkinter.messagebox.askyesno(title, message):
-                self.game.reset()
+                self.game.style()
             else:
                 self.game.window.destroy()
 

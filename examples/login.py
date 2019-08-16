@@ -30,7 +30,7 @@ class Login:
         btn_cancel.bind(sequence="<Button-1>", func=self.cancel)
         btn_cancel.pack(padx=10, pady=10, side=LEFT)
 
-        btn_login = Button(master=self.window, text="Login", width=10, command=self.login)
+        btn_login = Button(master=self.window, text="Login", width=10)
         btn_login.pack(padx=10, pady=10, side=RIGHT)
 
         btn_login.bind(sequence="<Button-1>", func=self.login)

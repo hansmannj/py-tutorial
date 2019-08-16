@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 import math
 
 # Variante mit Parameter
@@ -10,14 +9,12 @@ import math
 while True:
     user_input = input("Bitte den Radius eingeben: ")
     try:
+        # Benutzereingaben sind immer Strings
+        # Deshalb casting nach Fliesskommazahl
         radius = float(user_input)
         break
     except Exception as e:
         print(e)
-
-# Benutzereingaben sind immer Strings
-# Deshalb casting nach Fliesskommazahl
-radius = float(user_input)
 
 # Berechnungen
 diameter = radius * 2

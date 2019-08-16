@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 liste = [1, 2, 3, 4, 5, 6]
 
 # Solution 1: for-loop

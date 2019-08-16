@@ -9,5 +9,5 @@ def primzahl(zahl):
 
 
 for z in range(100):
-    if primzahl(z) == True:
+    if primzahl(z):  # Kurzschreibweise für 'primzahl(z) == True'
         print("{} ist eine Primzahl".format(z))
