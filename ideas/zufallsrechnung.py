@@ -2,7 +2,6 @@ import random
 
 runden = 2
 versuche = 3
-
 richtige = 0
 
 for runde in range(runden):
@@ -12,7 +11,6 @@ for runde in range(runden):
     operator = random.choice(["+", "-", "*"])
     rechnung = f"{erste_zahl}{operator}{zweite_zahl}"
     resultat = eval(rechnung)
-    print(resultat)
 
     for versuch in range(versuche):
         if float(input(f"Was ergibt {rechnung}? ")) == resultat:
