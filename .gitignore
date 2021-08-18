@@ -1,7 +1,6 @@
 /.idea/
 /notebooks/.ipynb_checkpoints/
 /solutions/adresse.py
-/solutions/geburtstag.py
 /solutions/koordinaten.py
 /solutions/lichtschalter.py
 /solutions/minesweeper.py
