@@ -8,7 +8,7 @@ import random
 # leeres Set vorbereiten
 tipp = set()
 
-# So lange Zufallstahlen generieren, bis das Set sechs verschiedene Zahlen enthält
+# Schleife solange noch nicht 6 gültige Zahlen getippt wurden
 while len(tipp) < 6:
 
     # Benutzer auffordern, eine Zahl einzugeben.
