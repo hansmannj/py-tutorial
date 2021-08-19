@@ -1,7 +1,2 @@
 /.idea/
 /notebooks/.ipynb_checkpoints/
-/solutions/adresse.py
-/solutions/koordinaten.py
-/solutions/lichtschalter.py
-/solutions/minesweeper.py
-/solutions/waehrung.py
