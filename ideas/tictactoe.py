@@ -10,8 +10,13 @@ class Game:
         self.window = Tk()
         self.window.title("Tic-Tac-Toe")
 
-        self.score = None
+        self.clicks = None
         self.player = "X"
+
+        self.colors = {
+            "X": "red",
+            "O": "blue"
+        }
 
         self.winners = (
             {"00", "01", "02"},  # row 0
@@ -35,7 +40,12 @@ class Game:
         # Spielfeld aufbauen
         for x in range(3):
             for y in range(3):
-                Cell(self, x, y)
+                # Button erstellen und im Grid an entsprechender x,y Position anzeigen
+                button = Label(master=self.playground, width=2, height=1, background="light gray", font=("Arial", 40))
+                button.grid(column=x, row=y, padx=1, pady=1)
+
+                # Funktion an den Button binden, wenn Mausklick
+                button.bind(sequence="<Button-1>", func=self.click)
 
         # Spielstand auf Anfang setzen
         self.reset()
@@ -46,62 +56,50 @@ class Game:
 
     def reset(self):
 
-        self.score = {
-            "0": set(),
+        self.clicks = {
+            "O": set(),
             "X": set()
         }
 
         for cell in self.playground.winfo_children():
             cell.config(text="", state="normal")
 
-
-class Cell:
-    """Bauplan für eine einzelne Zelle.
-    """
-
-    def __init__(self, game, x, y):
-        # Klassenvariablen initialisieren
-        self.x = x
-        self.y = y
-        self.game = game
-
-        # Button erstellen und im Grid an entsprechender x,y Position anzeigen
-        button = Label(master=self.game.playground, width=2, height=1, background="light gray", font=("Arial", 40))
-        button.grid(column=x, row=y, padx=1, pady=1)
-
-        # Funktionen an den Button binden
-        button.bind(sequence="<Button-1>", func=self.click)
+        self.statusbar.config(text=f"{self.player} ist dran", fg=self.colors[self.player])
 
     def click(self, event):
+        if not event.widget["text"]:
 
-        def popup(title, message):
-            # Messagebox wenn Spiel beendet.
-            if messagebox.askyesno(title, message):
-                self.game.reset()
-            else:
-                self.game.window.destroy()
+            event.widget.config(text=self.player, fg=self.colors[self.player])
 
-        if event.widget["state"] == "normal":
+            g = event.widget.grid_info()
+            self.clicks[self.player].add(f"{g['column']}{g['row']}")
 
-            event.widget.config(text=self.game.player, state="disabled")
-            self.game.score[self.game.player].add(f"{self.x}{self.y}")
-
-            if len([j for i in self.game.score.values() for j in i]) == 9:
-                self.game.statusbar.config(text="Unentschieden")
-                popup(title="Unentschieden",
-                      message="Unentschieden\nNochmals spielen?")
-
-            else:
-                for winner in self.game.winners:
-                    if winner.issubset(self.game.score[self.game.player]):
-                        self.game.statusbar.config(text=f"Spieler {self.game.player} hat gewonnen")
-                        popup(title=f"Spieler {self.game.player} hat gewonnen!",
-                              message=f"Spieler {self.game.player} hat gewonnen!\nNochmals spielen?")
-                        break
+            # check for win
+            for winner in self.winners:
+                if winner.issubset(self.clicks[self.player]):
+                    message = f"{self.player} gewinnt"
+                    self.statusbar.config(text=message, fg=self.colors[self.player])
+                    self.popup(title=message,
+                               message=f"{message}\nNochmals spielen?")
+                    return
 
             # switch player
-            self.game.player = list(self.game.score)[not bool(list(self.game.score).index(self.game.player))]
-            self.game.statusbar.config(text=f"Spieler {self.game.player} ist an der Reihe", fg="dark green")
+            self.player = list(self.clicks)[not bool(list(self.clicks).index(self.player))]
+
+            if len([j for i in self.clicks.values() for j in i]) == 9:
+                message = "Unentschieden"
+                self.statusbar.config(text=message, fg="green")
+                self.popup(title=message,
+                           message=f"{message}\nNochmals spielen?")
+            else:
+                self.statusbar.config(text=f"{self.player} ist dran", fg=self.colors[self.player])
+
+    def popup(self, title, message):
+        # Messagebox wenn Spiel beendet.
+        if messagebox.askyesno(title, message):
+            self.reset()
+        else:
+            self.window.destroy()
 
 
 # Spiel starten
