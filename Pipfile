@@ -15,7 +15,8 @@ requests = "*"
 [dev-packages]
 yapf = "*"
 pylint = "*"
+typing-extensions = "*"
 
 
 [requires]
-python_version = "3.9"
+python_version = "3.10"
