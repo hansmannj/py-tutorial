@@ -1,14 +1,17 @@
 /.idea/
 /notebooks/.ipynb_checkpoints/
 /solutions/adresse.py
+/solutions/Data_Frame_Filter.py
 /solutions/geburtstag.py
 /solutions/koordinaten.py
 /solutions/kreis_funktion.py
 /solutions/kreis.py
+/solutions/lichtschalter.py
 /solutions/lotto.py
 /solutions/namen.py
 /solutions/profillinie.py
 /solutions/pyramide.py
+/solutions/pyvinci.py
 /solutions/schach.py
 /solutions/sehtest.py
 /solutions/sehtest_refresh.py
