@@ -11,6 +11,7 @@ geopandas = "*"
 openpyxl = "*"
 matplotlib = "*"
 requests = "*"
+SkPy = "~=0.10.4"
 
 [dev-packages]
 yapf = "~=0.32.0"

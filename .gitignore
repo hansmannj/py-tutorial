@@ -1,5 +1,7 @@
 /.idea/
 /notebooks/.ipynb_checkpoints/
+/notebooks/
+/examples
 /solutions/adresse.py
 /solutions/Data_Frame_Filter.py
 /solutions/geburtstag.py
