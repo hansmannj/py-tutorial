@@ -22,7 +22,7 @@ locale.setlocale(locale.LC_TIME, "de_CH.UTF-8")
 
 # Ausgabe
 print(time.strftime("Du wurdest an einem %A geboren", t0))
-# Je nachdem of vergangen oder zukünftig den Platzhalter {} befüllen
+# Je nachdem ob vergangen oder zukünftig den Platzhalter {} befüllen
 print(
     time.strftime(
         f"Dein 30. Geburtstag {'ist' if t30 > time.localtime() else 'war'} an einem %A", t30
