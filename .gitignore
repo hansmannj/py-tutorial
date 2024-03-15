@@ -3,7 +3,6 @@
 /notebooks/
 /examples
 # /solutions/adresse.py
-# /solutions/Data_Frame_Filter.py
 # /solutions/geburtstag.py
 # /solutions/koordinaten.py
 # /solutions/kreis_funktion.py
@@ -13,7 +12,6 @@
 # /solutions/namen.py
 # /solutions/profillinie.py
 # /solutions/pyramide.py
-# /solutions/pyvinci.py
 # /solutions/schach.py
 # /solutions/sehtest.py
 # /solutions/sehtest_refresh.py
