@@ -22,8 +22,6 @@ while True:
         print("Bitte Zahl grösser Null eingeben")
         print(e)
 
-
-
 # Berechnungen
 diameter = radius * 2
 circumference = radius * 2 * math.pi
