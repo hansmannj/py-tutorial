@@ -20,8 +20,12 @@ for name in namen:
     # schlanke Variante, aber schlechter nachvollziehbar
     # vorname, nachname = name.strip().split(" ")
 
+    nachnamen.append(nachname)
+
+    # Vairante: Falls als Ausgabeformat "Nachname Vorname" gewünscht ist:
     # Nach- und Vorname formattiert in die vorbereitete Liste 'nachnamen' schreiben
-    nachnamen.append(f"{nachname} {vorname}")
+    # nachnamen.append(f"{nachname} {vorname}")
+
 
 # Liste 'nachnamen' sortiert ausgeben
 print(sorted(nachnamen))
