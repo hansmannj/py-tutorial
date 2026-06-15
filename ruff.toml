@@ -1,0 +1,22 @@
+line-length = 100
+
+
+[lint]
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes (undefined names, unused imports)
+    "I",   # isort (import order)
+    "UP",  # pyupgrade (modernise syntax)
+]
+ignore = [
+    "D",      # docstrings — not required in tutorial code
+    "ARG",    # unused function arguments — common in beginner exercises
+    "PLR0913", # too-many-arguments
+]
+
+[lint.isort]
+force-single-line = true
+
+[format]
+quote-style = "double"

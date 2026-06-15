@@ -15,8 +15,8 @@ result = response.json()
 lt_lv03 = result["coordinates"]
 
 # Berechnung mit Pythoagoras
-distance = math.sqrt((azb_lv03[0] - lt_lv03[0])**2 + (azb_lv03[1] - lt_lv03[1])**2)
-distance2 = math.sqrt((lt_lv03[0] - azb_lv03[0])**2 + (lt_lv03[1] - azb_lv03[1])**2)
+distance = math.sqrt((azb_lv03[0] - lt_lv03[0]) ** 2 + (azb_lv03[1] - lt_lv03[1]) ** 2)
+distance2 = math.sqrt((lt_lv03[0] - azb_lv03[0]) ** 2 + (lt_lv03[1] - azb_lv03[1]) ** 2)
 
 
 # Berechnung mit hypot

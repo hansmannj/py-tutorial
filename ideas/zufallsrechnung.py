@@ -19,7 +19,7 @@ for runde in range(RUNDEN):
             break
         else:
             if versuch == VERSUCHE - 1:
-                print(f"Leider falsch. Keine VERSUCHE mehr übrig. Weiter mit der nächsten Aufgabe")
+                print("Leider falsch. Keine VERSUCHE mehr übrig. Weiter mit der nächsten Aufgabe")
             else:
                 print(f"Leider falsch. Noch {VERSUCHE - versuch - 1} VERSUCHE übrig")
 

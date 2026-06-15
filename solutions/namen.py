@@ -3,7 +3,7 @@ PERSONEN = r"../resources/personen.txt"
 
 # Alle Zeilen aus der Datei lesen und in der Variable 'namen' speichern.
 # Encoding hilft bei Umlauten.
-with open(PERSONEN, "r", encoding="utf-8") as r:
+with open(PERSONEN, encoding="utf-8") as r:
     namen = r.readlines()
 
 # leere Liste vorbereiten

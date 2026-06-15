@@ -31,14 +31,14 @@ def check_radius_input():
         except ValueError:
             # ...sonst den User um erneute Eingabe bitten
             print("Bitte eine Zahl eingeben")
-        except Exception as e:
+        except Exception:
             print("Bitte eine positive Zahl eingeben")
     return r
 
 
-radius = check_radius_input()
+if __name__ == "__main__":
+    radius = check_radius_input()
 
-# Ausgabe
-print("Durchmesser:", calc_diameter(radius))
-print("Umfang: " + str(circumference(radius)))
-print(f"Fläche: {calc_area(radius)}")
+    print("Durchmesser:", calc_diameter(radius))
+    print("Umfang: " + str(circumference(radius)))
+    print(f"Fläche: {calc_area(radius)}")

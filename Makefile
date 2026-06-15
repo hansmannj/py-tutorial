@@ -2,24 +2,11 @@ SHELL = /bin/bash
 
 .DEFAULT_GOAL := help
 
-CURRENT_DIR := $(shell pwd)
-
-# Find all python files that are not inside a hidden directory (directory starting with .)
+# Find all Python files outside hidden directories
 PYTHON_FILES := $(shell find ./* -type f -name "*.py" -print)
 
-# PIPENV files
-PIP_FILE = Pipfile
-PIP_FILE_LOCK = Pipfile.lock
-
-
-# Commands
-PIPENV_RUN := pipenv run
-PYTHON := $(PIPENV_RUN) python3
-PIP := $(PIPENV_RUN) pip3
-YAPF := $(PIPENV_RUN) yapf
-ISORT := $(PIPENV_RUN) isort
-PYLINT := $(PIPENV_RUN) pylint
-
+VENV := .venv
+UV   := uv
 
 
 all: help
@@ -29,51 +16,48 @@ all: help
 help:
 	@echo "Usage: make <target>"
 	@echo
-	@echo "Possible targets:"
-	@echo -e " \033[1mSetup TARGETS\033[0m "
-	@echo "- setup              Create the python virtual environment and activate it"
-	@echo "- dev                Create the python virtual environment with developer tools and activate it"
-	@echo -e " \033[1mFORMATING, LINTING AND TESTING TOOLS TARGETS\033[0m "
-	@echo "- format             Format the python source code"
-	@echo "- lint               Lint the python source code"
-	@echo "- format-lint        Format and lint the python source code"
-	@echo -e " \033[1mCLEANING TARGETS\033[0m "
-	@echo "- clean_venv         Clean python venv"
-
-
-# Build targets. Calling setup is all that is needed for the local files to be installed as needed.
-
-.PHONY: dev
-dev: $(REQUIREMENTS)
-	pipenv install --dev
-	pipenv shell
+	@echo "Setup:"
+	@echo "  setup          Create .venv and install all packages from requirements.txt"
+	@echo
+	@echo "Code quality:"
+	@echo "  format         Format code with ruff (style only)"
+	@echo "  lint           Lint code with ruff (report only, no fixes)"
+	@echo "  format-lint    Format and fix all auto-fixable issues"
+	@echo "  test           Run tests with pytest"
+	@echo
+	@echo "Cleanup:"
+	@echo "  clean          Remove .venv and cached files"
 
 
 .PHONY: setup
-setup: $(REQUIREMENTS)
-	pipenv install
-	pipenv shell
+setup:
+	$(UV) venv
+	$(UV) pip install -r requirements.txt
 
-
-# linting target, calls upon yapf to make sure your code is easier to read and respects some conventions.
 
 .PHONY: format
 format:
-	$(YAPF) -p -i --style .style.yapf $(PYTHON_FILES)
-	$(ISORT) $(PYTHON_FILES)
+	$(UV) run ruff format $(PYTHON_FILES)
 
 
 .PHONY: lint
 lint:
-	$(PYLINT) $(PYTHON_FILES)
+	$(UV) run ruff check $(PYTHON_FILES)
 
 
 .PHONY: format-lint
-format-lint: format lint
+format-lint:
+	$(UV) run ruff format $(PYTHON_FILES)
+	$(UV) run ruff check --fix $(PYTHON_FILES)
 
 
- # Clean targets
+.PHONY: test
+test:
+	$(UV) run pytest solutions/
 
-.PHONY: clean_venv
-clean_venv:
-	pipenv --rm
+
+.PHONY: clean
+clean:
+	rm -rf $(VENV) __pycache__ .pytest_cache .ruff_cache
+	find . -type d -name "__pycache__" -exec rm -rf {} + 2>/dev/null || true
+	find . -name "*.pyc" -delete 2>/dev/null || true

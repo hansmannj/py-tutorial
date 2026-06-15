@@ -1,9 +1,12 @@
-from tkinter import *
+from tkinter import BOTTOM
+from tkinter import TOP
+from tkinter import Frame
+from tkinter import Label
+from tkinter import Tk
 from tkinter import messagebox
 
 
 class Game:
-
     def __init__(self):
 
         # Hauptfenster
@@ -23,7 +26,7 @@ class Game:
             {"01", "11", "21"},  # col 1
             {"02", "12", "22"},  # col 2
             {"00", "11", "22"},  # \
-            {"02", "11", "20"}  # /
+            {"02", "11", "20"},  # /
         )
 
         # Frame für Spielfeld
@@ -43,7 +46,7 @@ class Game:
                     width=2,
                     height=1,
                     background="light gray",
-                    font=("Arial", 40)
+                    font=("Arial", 40),
                 )
                 button.grid(column=x, row=y, padx=1, pady=1)
 
@@ -68,7 +71,6 @@ class Game:
 
     def click(self, event):
         if not event.widget["text"]:
-
             event.widget.config(text=self.player, fg=self.colors[self.player])
 
             g = event.widget.grid_info()
