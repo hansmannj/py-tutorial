@@ -23,7 +23,7 @@ help:
 	@echo "  format         Format code with ruff (style only)"
 	@echo "  lint           Lint code with ruff (report only, no fixes)"
 	@echo "  format-lint    Format and fix all auto-fixable issues"
-	@echo "  test           Run tests with pytest"
+	@echo "  test           Run pytest on solutions/"
 	@echo
 	@echo "Cleanup:"
 	@echo "  clean          Remove .venv and cached files"
