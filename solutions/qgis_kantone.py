@@ -1,66 +1,45 @@
-# Läuft im QGIS Python Script Editor (nicht als normales Python-Skript)
+# Läuft im QGIS Python Script Editor
 # Öffnen: Erweiterungen → Python-Konsole → Skript-Editor öffnen
 
-import os
-import urllib.request
-import zipfile
+from qgis.core import QgsProject  # noqa: F821
+from qgis.core import QgsVectorLayer  # noqa: F821
 
-from qgis.core import QgsProject
-from qgis.core import QgsVectorLayer
-
-# --- Schritt 1: GeoPackage von swisstopo herunterladen ---
+# 1. Kantonsgrenz-Layer von swisstopo laden
 url = (
-    "https://data.geo.admin.ch/ch.swisstopo.swissboundaries3d/"
-    "swissboundaries3d_2026-01/swissboundaries3d_2026-01_2056_5728.gpkg.zip"
+    "https://data.geo.admin.ch/ch.swisstopo.swissboundaries3d-kanton-flaeche.fill/"
+    "swissboundaries3d-kanton-flaeche.fill/"
+    "swissboundaries3d-kanton-flaeche.fill_2056.json"
 )
-zip_pfad = os.path.join(os.path.expanduser("~"), "swissboundaries3d.zip")
-print("Herunterladen...")
-urllib.request.urlretrieve(url, zip_pfad)
-print(f"Gespeichert: {zip_pfad}")
-
-# --- Schritt 2: Zip entpacken ---
-ziel_ordner = os.path.join(os.path.expanduser("~"), "swissboundaries3d")
-with zipfile.ZipFile(zip_pfad, "r") as z:
-    z.extractall(ziel_ordner)
-print(f"Entpackt nach: {ziel_ordner}")
-
-# --- Schritt 3: GPKG-Datei finden ---
-gpkg_pfad = None
-for datei in os.listdir(ziel_ordner):
-    if datei.endswith(".gpkg"):
-        gpkg_pfad = os.path.join(ziel_ordner, datei)
-        break
-print(f"GeoPackage: {gpkg_pfad}")
-
-# --- Schritt 4: Verfügbare Layer im GeoPackage anzeigen ---
-# Ein GeoPackage kann mehrere Layer enthalten
-temp = QgsVectorLayer(gpkg_pfad, "temp", "ogr")
-layer_namen = [sublayer.split("!!::!!")[1] for sublayer in temp.dataProvider().subLayers()]
-print("Verfügbare Layer:", layer_namen)
-
-# --- Schritt 5: Kantonsgrenz-Layer laden ---
-# Den Layer suchen, der "kant" im Namen hat
-kanton_layer_name = next(n for n in layer_namen if "kant" in n.lower())
-layer = QgsVectorLayer(f"{gpkg_pfad}|layername={kanton_layer_name}", "Kantone", "ogr")
+# "ogr" = Datenprovider für Vektordaten (GeoJSON, GPKG, Shapefile, ...)
+layer = QgsVectorLayer(url, "Kantone", "ogr")
 QgsProject.instance().addMapLayer(layer)
 print(f"Layer geladen: {layer.featureCount()} Kantone")
 
-# --- Schritt 6: Name und Fläche jedes Kantons sammeln ---
+# 2. Spaltennamen anzeigen
+print("Spalten:", layer.fields().names())
+
+# 3. Die 5 grössten Kantone ausgeben
 kantone = []
 for feature in layer.getFeatures():
-    name = feature["NAME"]
+    flaeche_km2 = feature.geometry().area() / 1000000  # m² → km²
+    kantone.append((flaeche_km2, feature["NAME"]))
 
-    # Die Geometrie ist 3D — Z-Werte entfernen, damit area() korrekt rechnet
-    geom = feature.geometry()
-    abstract = geom.get()
-    if abstract:
-        abstract.dropZValue()
-    flaeche_km2 = geom.area() / 1e6  # Quadratmeter → km²
-
-    kantone.append((flaeche_km2, name))
-
-# --- Schritt 7: Nach Fläche sortieren und Top 5 ausgeben ---
 kantone.sort(reverse=True)
-print("\nDie 5 flächengrössten Kantone:")
+print("\nDie 5 grössten Kantone:")
 for flaeche, name in kantone[:5]:
     print(f"  {name}: {flaeche:.0f} km²")
+
+# 4. Alle Kantone selektieren, die an Bern grenzen
+bern_geom = None
+for feature in layer.getFeatures():
+    if feature["NAME"] == "Bern":
+        bern_geom = feature.geometry()
+        break
+
+nachbarn_ids = []
+for feature in layer.getFeatures():
+    if feature["NAME"] != "Bern" and feature.geometry().touches(bern_geom):
+        nachbarn_ids.append(feature.id())
+
+layer.selectByIds(nachbarn_ids)
+print(f"\n{len(nachbarn_ids)} Kantone grenzen an Bern - in QGIS selektiert.")
