@@ -17,7 +17,6 @@ params = {"searchText": adresse, "type": "locations", "limit": 1}
 # ausserhalb kann das verify=False weggelassen
 response = requests.get(url=service, params=params)
 
-
 # Antwortcode des Servers (200=ok)
 # print(response)
 
@@ -35,4 +34,5 @@ y = result["results"][0]["attrs"]["y"]
 # print(f"Die Adresse '{adresse}' hat die Koordinaten {round(y)}/{round(x)}")
 
 # Webbrowser öffnen und Pin anzeigen
-webbrowser.open_new_tab(fr"https://map.geo.admin.ch/?X={x}&Y={y}&zoom=12&crosshair=marker")
+webbrowser.open_new_tab(
+    rf"https://map.geo.admin.ch/?X={x}&Y={y}&zoom=12&crosshair=marker")

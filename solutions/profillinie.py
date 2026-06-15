@@ -23,7 +23,7 @@ def profile_lv95(punkt1, punkt2, n):
 
     # leeren pandas DataFrame initialisieren. In der Spalte "km from start" wird die Entfernung
     # von jedem Punkt auf der Linie zum Startpunkt gespeichert.
-    df = pd.DataFrame(columns=['Easting', 'Northing', 'Z', 'km from start'], dtype=float)
+    df = pd.DataFrame(columns=["Easting", "Northing", "Z", "km from start"], dtype=float)
     delta_easting = punkt2[0] - punkt1[0]
     delta_northing = punkt2[1] - punkt1[1]
 
@@ -36,18 +36,19 @@ def profile_lv95(punkt1, punkt2, n):
         # Höhe des aktuellen Punkts vom Webdienst abfragen
         response = requests.get(url=service, params=params, verify=True)
         z = float(response.json()["height"]) / 1000  # umgerechnet in km
-        km_from_start = math.sqrt(
-            (i * delta_easting / (n - 1))**2 + (i * delta_northing / (n - 1))**2
-        ) / 1000
+        km_from_start = (
+            math.sqrt((i * delta_easting / (n - 1)) ** 2 + (i * delta_northing / (n - 1)) ** 2)
+            / 1000
+        )
         # neuer kleiner DataFrame mit den aktuellen X-, Y- und Z-Koordinaten und Distanz zum Start:
         current_XYZ = pd.DataFrame(
             {
                 "Easting": [easting],
                 "Northing": [northing],
                 "Z": [z],
-                "km from start": [km_from_start]
+                "km from start": [km_from_start],
             },
-            dtype=float
+            dtype=float,
         )
         df = pd.concat([df, current_XYZ], ignore_index=True)
 
@@ -66,7 +67,7 @@ def lv95_in_wgs84(df_lv95):
     """
     # Transformation von LV95 zu WGS84
     service = "http://geodesy.geo.admin.ch/reframe/lv95towgs84"
-    in_wgs84 = pd.DataFrame(columns=['Easting', 'Northing', 'Z'], dtype=float)
+    in_wgs84 = pd.DataFrame(columns=["Easting", "Northing", "Z"], dtype=float)
 
     for _, row in df_lv95.iterrows():
         params = {"easting": row[0], "northing": row[1], "format": "json"}
@@ -76,9 +77,7 @@ def lv95_in_wgs84(df_lv95):
 
         # neuer kleiner DataFrame mit den aktuellen X-, Y- und Z-Koordinaten:
         current_XYZ = pd.DataFrame(
-            {
-                "Easting": [easting], "Northing": [northing], "Z": [row[2]]
-            }, dtype=float
+            {"Easting": [easting], "Northing": [northing], "Z": [row[2]]}, dtype=float
         )
         in_wgs84 = pd.concat([in_wgs84, current_XYZ], ignore_index=True)
 
@@ -112,7 +111,7 @@ def plot_Hoehenprofil(df_to_plot):
         df_to_plot: pandas DataFrame with points to be plotted.
 
     """
-    ax = df_to_plot.plot(x='km from start', y='Z', figsize=(15, 15))
+    ax = df_to_plot.plot(x="km from start", y="Z", figsize=(15, 15))
     ax.set_aspect(8)
     fig = ax.get_figure()
     fig.savefig("Hoehenprofil.png")

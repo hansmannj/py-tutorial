@@ -9,8 +9,6 @@ for zahl in liste:
 print(summe)
 
 
-
-
 # Solution 2 etwas gemogelt ;-)
 # wir benutzen eine built-in function:
 print(sum(liste))

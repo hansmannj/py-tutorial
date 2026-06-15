@@ -1,6 +1,9 @@
 import math
+
 import pytest
-from kreis_funktion import calc_diameter, circumference, calc_area
+from kreis_funktion import calc_area
+from kreis_funktion import calc_diameter
+from kreis_funktion import circumference
 
 
 def test_durchmesser():

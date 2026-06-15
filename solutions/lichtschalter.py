@@ -1,10 +1,9 @@
-import random
-import string
-from tkinter import *
+from tkinter import Button
+from tkinter import Label
+from tkinter import Tk
 
 
 class Lichtschalter:
-
     # Konstruktor, der das Fenster aufbaut
     def __init__(self):
         self.window = Tk()
@@ -20,7 +19,7 @@ class Lichtschalter:
             text="Licht ist ausgeschaltet",
             font=("Arial", 30),
             fg="white",
-            bg="black"
+            bg="black",
         )
         self.label.pack(pady=80, padx=10)
 

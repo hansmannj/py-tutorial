@@ -10,7 +10,6 @@ tipp = set()
 
 # Schleife solange noch nicht 6 gültige Zahlen getippt wurden
 while len(tipp) < 6:
-
     # Benutzer auffordern, eine Zahl einzugeben.
     # Die Anzahl der bereits im Set enthaltenen Zahlen plus 1 zeigt an,
     # die wievielte Zahl eingegeben werden muss

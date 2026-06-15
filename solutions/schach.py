@@ -9,7 +9,6 @@ abc = string.ascii_lowercase[:8]
 
 # Äussere Schleife ist für die Zeilen. In einer Zeile ist immer dieselbe Nummer
 for n in numbers:
-
     # Innere Schleife ist für die Buchstaben. In jeder Spalte steht ein anderer Buchstabe
     for letter in abc:
         # Ein Feld auf dem Schachbrett setzt sich zusammen aus Buchstabe+Zahl (Achtung: casting)

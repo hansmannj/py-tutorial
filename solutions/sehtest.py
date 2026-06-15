@@ -1,10 +1,10 @@
 import random
 import string
-from tkinter import *
+from tkinter import Label
+from tkinter import Tk
 
 
 class Sehtest:
-
     def __init__(self):
         window = Tk()
         window.title("Sehtest")

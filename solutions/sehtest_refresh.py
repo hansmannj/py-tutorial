@@ -1,10 +1,11 @@
 import random
 import string
-from tkinter import *
+from tkinter import Button
+from tkinter import Label
+from tkinter import Tk
 
 
 class SehtestRefresh:
-
     # Konstruktor, der das Fenster aufbaut
     def __init__(self):
         self.window = Tk()

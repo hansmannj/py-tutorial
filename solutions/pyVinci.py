@@ -1,5 +1,9 @@
 import io
-from tkinter import *
+from tkinter import Button
+from tkinter import Canvas
+from tkinter import Label
+from tkinter import Scale
+from tkinter import Tk
 from tkinter.colorchooser import askcolor
 from tkinter.filedialog import asksaveasfile
 
@@ -9,7 +13,6 @@ from PIL import Image
 # parts of this code are inspired by https://tkdocs.com/tutorial/canvas.html
 # and https://gist.github.com/nikhilkumarsingh/85501ee2c3d8c0cfa9d1a27be5781f06
 class PyVinci:
-
     def __init__(self):
         self.window = Tk()
         self.window.resizable(0, 0)
@@ -33,7 +36,7 @@ class PyVinci:
 
         # Schieberegler, um die Stiftgrösse auszuwählen
         self.size_selector = Scale(
-            self.window, label='Stiftgrösse', orient='horizontal', from_=1, to=15
+            self.window, label="Stiftgrösse", orient="horizontal", from_=1, to=15
         )
         self.size_selector.grid(column=1, row=0, padx=20, pady=0)
         # Stiftgrösse bei Programmstart soll initialem Wert von self.line_size entsprechen
@@ -64,7 +67,7 @@ class PyVinci:
             event.y,
             fill=self.line_color,
             width=self.line_size,
-            capstyle="round"
+            capstyle="round",
         )
         self.save_posn(event)
 
@@ -74,13 +77,13 @@ class PyVinci:
         self.current_color_label.configure(bg=self.line_color)
 
     def save_to_file(self):
-        filename = asksaveasfile(mode='w', defaultextension=".jpeg")
+        filename = asksaveasfile(mode="w", defaultextension=".jpeg")
         if filename:
             # Abspeichern in Postscript und konvertieren zu jpeg. Inspiriert von hier:
             # https://stackoverflow.com/questions/41940945/saving-canvas-from-tkinter-to-file
-            ps = self.canvas.postscript(colormode='color')
-            img = Image.open(io.BytesIO(ps.encode('utf-8')))
-            img.save(filename, 'jpeg')
+            ps = self.canvas.postscript(colormode="color")
+            img = Image.open(io.BytesIO(ps.encode("utf-8")))
+            img.save(filename, "jpeg")
 
 
 PyVinci()
