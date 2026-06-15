@@ -36,7 +36,7 @@ __pycache__/
 .claude
 /dist
 *.xlsx
-/solutions/*.htmly
+/solutions/*.html
 *.html
 *.png
 hoehendifferenz.csv
