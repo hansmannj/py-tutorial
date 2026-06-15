@@ -2,23 +2,32 @@
 /notebooks/.ipynb_checkpoints/
 /notebooks/
 /examples
-# comment / uncomment here
-# /solutions/adresse.py
-# /solutions/geburtstag.py
-# /solutions/koordinaten.py
-# /solutions/kreis_funktion.py
-# /solutions/kreis.py
-# /solutions/lichtschalter.py
-# /solutions/lotto.py
-# /solutions/namen.py
-# /solutions/profillinie.py
+# comment out to expose individual solutions
+/solutions/adresse.py
+/solutions/bounding_box.py
+/solutions/DataFrameFilter.py
+/solutions/datensatz_alter.py
+/solutions/geburtstag.py
+/solutions/geodaten.py
+/solutions/geodaten_zonen.py
+/solutions/koordinaten_csv.py
+/solutions/koordinaten_input.py
+/solutions/koordinaten.py
+/solutions/kreis_funktion.py
+/solutions/kreis.py
+/solutions/lichtschalter.py
+/solutions/lotto.py
+/solutions/namen.py
+/solutions/profillinie.py
 # /solutions/pyramide.py
+/solutions/pyVinci.py
+/solutions/qgis_kantone.py
+/solutions/qgis_messpunkte.py
 # /solutions/schach.py
-# /solutions/sehtest.py
-# /solutions/sehtest_refresh.py
+/solutions/sehtest.py
+/solutions/sehtest_refresh.py
 # /solutions/summe.py
-# /solutions/DataFrameFilter.py
-# /solutions/pyVinci.py
+/solutions/test_kreis_funktion.py
 /solutions/*.txt
 .vscode
 /TEMP/*
