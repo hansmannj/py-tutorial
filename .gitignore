@@ -13,7 +13,7 @@
 /solutions/koordinaten_csv.py
 # /solutions/koordinaten_input.py
 /solutions/koordinaten.py
-/solutions/kreis_funktion.py
+# /solutions/kreis_funktion.py
 # /solutions/kreis.py
 /solutions/lichtschalter.py
 /solutions/lotto.py
@@ -27,7 +27,7 @@
 /solutions/sehtest.py
 /solutions/sehtest_refresh.py
 # /solutions/summe.py
-/solutions/test_kreis_funktion.py
+# /solutions/test_kreis_funktion.py
 /solutions/*.txt
 .vscode
 /TEMP/*
