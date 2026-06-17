@@ -7,17 +7,17 @@
 # /solutions/bounding_box.py
 /solutions/DataFrameFilter.py
 /solutions/datensatz_alter.py
-/solutions/geburtstag.py
+# /solutions/geburtstag.py
 /solutions/geodaten.py
 /solutions/geodaten_zonen.py
-/solutions/koordinaten_csv.py
+# /solutions/koordinaten_csv.py
 # /solutions/koordinaten_input.py
 /solutions/koordinaten.py
 # /solutions/kreis_funktion.py
 # /solutions/kreis.py
 /solutions/lichtschalter.py
-/solutions/lotto.py
-/solutions/namen.py
+# /solutions/lotto.py
+# /solutions/namen.py
 /solutions/profillinie.py
 # /solutions/pyramide.py
 /solutions/pyVinci.py

@@ -19,7 +19,7 @@ def test_umfang():
     assert circumference(0) == pytest.approx(0)
     assert circumference(5) == pytest.approx(2 * math.pi * 5)
     with pytest.raises(TypeError):
-        circumference("sdfdf")
+        circumference("Irgendein Text, statt einer Zahl.")
 
 
 def test_flaeche():
