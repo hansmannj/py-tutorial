@@ -3,16 +3,16 @@
 /notebooks/
 /examples
 # comment out to expose individual solutions
-/solutions/adresse.py
+# /solutions/adresse.py
 # /solutions/bounding_box.py
 /solutions/DataFrameFilter.py
-/solutions/datensatz_alter.py
+# /solutions/datensatz_alter.py
 # /solutions/geburtstag.py
-/solutions/geodaten.py
-/solutions/geodaten_zonen.py
+# /solutions/geodaten.py
+# /solutions/geodaten_zonen.py
 # /solutions/koordinaten_csv.py
 # /solutions/koordinaten_input.py
-/solutions/koordinaten.py
+# /solutions/koordinaten.py
 # /solutions/kreis_funktion.py
 # /solutions/kreis.py
 /solutions/lichtschalter.py

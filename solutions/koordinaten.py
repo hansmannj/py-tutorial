@@ -1,0 +1,28 @@
+import math
+
+import requests
+
+service = "https://geodesy.geo.admin.ch/reframe/wgs84tolv95"
+
+# E / N
+lt_wgs84 = (7.452, 46.928)
+azb_lv95 = (2600052, 1198762)
+
+parameter = {"easting": lt_wgs84[0], "northing": lt_wgs84[1]}
+
+response = requests.get(url=service, params=parameter)
+result = response.json()
+lt_lv95 = result["coordinates"]
+
+# Berechnung mit Pythoagoras
+distance = math.sqrt((azb_lv95[0] - lt_lv95[0])**2 +
+                     (azb_lv95[1] - lt_lv95[1])**2)
+distance2 = math.sqrt((lt_lv95[0] - azb_lv95[0])**2 +
+                      (lt_lv95[1] - azb_lv95[1])**2)
+
+# Berechnung mit hypot
+# distance = math.hypot(azb_lv95[0] - lt_lv95[0], azb_lv95[1] - lt_lv95[1])
+
+print(distance, distance2)
+print(round(distance, -1))  # gerundet auf 10m
+print(round(distance / 500) * 500)  # gerundet auf 500m
